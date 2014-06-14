@@ -47,3 +47,22 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+.btn-primary {
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+  height: 44px;
+  width:  123px;
+  padding-top: 11px;
+  margin: 0 auto;
+  background: $green;
+  border-top: 1px #57ae23;
+  border-radius: 20px;
+  box-shadow: 0 2px 3px transparentize($black, 0.75);
+  color: $white;
+}
+.btn-primary:hover, .btn-primary:active {
+  color: $white;
+  font-style: normal;
+  background-color: $lightGreen;
+}
