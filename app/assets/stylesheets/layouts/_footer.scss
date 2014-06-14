@@ -1,0 +1,25 @@
+@import "_setup";
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $grey;
+  color: $grey;
+  a {
+    color:$grey;
+    &:hover {
+      color: $green;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import "_setup";
+body {
+  font-family: 'Lato', sans-serif;
+}
+header div.site-nav {}
+header div.site-nav ul {
+  float: right;
+  text-align: right;
+  line-height: 1;
+}
+header div.site-nav ul li {
+  display: inline-block;
+  padding: 0 $h-gutter/2;
+}
+header div.site-nav ul li:last-of-type {
+  padding-right: 0;
+}
+header div.site-nav ul li a {
+  color: $grey;
+}
+header div.site-nav ul li a:hover,
+header div.site-nav ul li a:focus,
+header div.site-nav ul li a:active {
+  color: darken($grey, 10%);
+}
+header div.site-nav div.user-nav {}
+header div.site-nav div.global-nav {}

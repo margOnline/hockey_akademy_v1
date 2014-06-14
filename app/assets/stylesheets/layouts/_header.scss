@@ -1,0 +1,44 @@
+@import "_setup";
+
+.site-head {
+  overflow: hidden;
+  padding: 0 1em;
+  border-top: 4px solid $green;
+  background: #fff;
+  width: 100%;
+  height: auto;
+  position:fixed;
+  top:0;
+  left:0;
+}
+header #site-logo{
+  margin-left: 125px;
+  margin-top: 30px;
+  font-size: 2.5em;
+  padding-top: 9px;
+  letter-spacing: 3px;
+}
+header img {
+  float: left;
+  margin: 20px 0 0 80px;
+}
+header nav.site-nav ul {
+  list-style: none;
+  display:inline-block;
+  float: right;
+  margin: -30px 100px 0 0;
+  li {
+    display: inline;
+    padding: 5px 10px;
+    font-size: 1.2em;
+    border-left: 1px solid $grey;
+    a {
+      color: $grey;
+
+    }
+  }
+  li:last-child {
+    border-right: 1px solid $grey;
+  }
+}
+

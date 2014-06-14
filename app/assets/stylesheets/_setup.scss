@@ -1,0 +1,37 @@
+// Colors
+$white:           #FFF;
+$black:           #000;
+$bkg:             #FFF;
+$text:            #333;
+$brand:           #25a9e0;
+$green:           #6CA737;
+$grey:            #B3B0AF;
+$blue:            #121255;
+// $brand-secondary: FIXME;
+
+$success:         #080;
+$warn:            #D00;
+
+
+// Typography
+$base-text-align: left; // switch for rtl
+$sans-serif-stack: 'Lato', Helvetica, Arial, sans-serif;
+// $serif-stack: 'Georgia', serif; // FIXME: enable if needed
+$base-font-size: 16px;
+$base-line-height: 1.5;
+
+// Layout
+$site-max-width: 940px;
+$header-height: 55px;
+$sub-nav-height: 53px;
+
+// Grid
+$v-gutter: 30px;
+$h-gutter: 16px;
+$site-max-width: 9999px;
+
+// Decoration
+// $border-radius: FIXME;
+
+// Media Query Mixins
+$fix-mqs: false !default;
