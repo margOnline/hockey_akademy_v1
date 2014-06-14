@@ -1,31 +1,19 @@
 require 'spec_helper'
 
 describe "Static pages" do
-
+  subject { page }
+  
   describe "Home page" do
-
-    it "should have the content 'Hockey Akademy" do
-      visit '/'
-      expect(page).to have_content('Hockey Akademy')
-    end
-
-    it "should have the title 'Home'" do
-      visit '/'
-      expect(page).to have_title('Hockey Akademy | Home')
-    end
+    before { visit root_path }
+    it { should have_content('Hockey Akademy') }
+    it { should have_title(full_title('')) }
+    it { should_not have_title('| Home') }
   end
 
   describe "Coaches Profiles page" do
-
-    it "should have the content 'Coaches Profiles'" do
-      visit '/coach_profiles'
-      expect(page).to have_content('Coaches Profiles')
-    end
-
-    it "should have the title 'Coaches Profiles'" do
-      visit '/coach_profiles'
-      expect(page).to have_title('Hockey Akademy | Coaches Profiles')
-    end
+    before { visit coach_profiles_path }
+    it { should have_content('Coaches Profiles') }
+    it { should have_title(full_title('Coaches Profiles')) }
   end
   
 end
