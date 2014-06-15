@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
   has_secure_password
+
+  attr_accessor :email, :firstname, :lastname, :dob
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :firstname, presence: true, length: { maximum: 50 }
@@ -10,5 +12,10 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 8 }
   # validates :dob, presence: true
+
+
+  def fullname
+    "#{lastname}, #{firstname}"
+  end
 
 end

@@ -47,6 +47,8 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+
+/******************* buttons *****************/
 .btn-primary {
   display: block;
   text-align: center;
@@ -65,4 +67,9 @@ p {
   color: $white;
   font-style: normal;
   background-color: $lightGreen;
+}
+
+/******************* errors *****************/
+.error_text {
+  color: $error;
 }
