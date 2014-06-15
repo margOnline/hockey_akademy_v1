@@ -7,7 +7,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder', '~> 2.0' 
+gem 'devise'
+gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
