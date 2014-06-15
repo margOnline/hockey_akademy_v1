@@ -10,6 +10,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0' 
 gem 'devise'
 gem 'bcrypt', '~>3.1.2'
+gem 'faker', '1.1.2'
+gem 'will_paginate', '3.0.4'
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'

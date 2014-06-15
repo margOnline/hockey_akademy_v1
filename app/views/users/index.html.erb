@@ -1,0 +1,7 @@
+<% if !@users.empty? %> 
+  <% @users.each do |u| %>
+    <p><%= u.fullname %></p>
+  <% end %>
+<% else %>
+  <p>Currently there are no registered players.</p>
+<% end %>
