@@ -1,8 +1,6 @@
 class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
   before_create :create_remember_token
-
-  has_many :camps,:dependent => :destroy
   
   has_secure_password
 
@@ -18,7 +16,12 @@ class User < ActiveRecord::Base
 
 
   def fullname
-    "#{lastname}, #{firstname}"
+    "#{lastname.titleize}, #{firstname.titleize}"
+  end
+
+  def age(as_at = Time.now)
+    as_at = as_at.utc.to_date if as_at.respond_to?(:utc)
+    as_at.year - dob.year - ((as_at.month > dob.month || (as_at.month == dob.month && as_at.day >= dob.day)) ? 0 : 1)
   end
 
   def User.new_remember_token

@@ -1,3 +1,18 @@
 <% provide(:title, 'Coaches Profiles') %>
-<h1>Coaches Profiles</h1>
-<p>Find me in app/views/static_pages/coach_profiles.html.erb</p>
+<h2>Coaches Profiles</h2>
+<% if @coaches.empty? %>
+  <p>We are in the process of building this page, please check back soon.</p>
+<% else %>
+  <ul class="coach-list">
+    <% @coaches.each do |coach| %>
+      <li>
+        <%= image_tag("#{coach.gravatar}", size: "150x150") %>
+        <div class="coach-text">
+          <h3><%= coach.fullname %></h3>
+          <p><%= coach.bio %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+

@@ -3,5 +3,6 @@ class StaticPagesController < ApplicationController
   end
 
   def coach_profiles
+    @coaches = Coach.all
   end
 end

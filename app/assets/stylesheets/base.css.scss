@@ -14,6 +14,9 @@ a {
 section {
   overflow: auto;
 }
+ul {
+  list-style: none;
+}
 textarea {
   resize:vertical;
 }
@@ -38,7 +41,7 @@ h1 {
   }
 }
 h2 {
-  font-size: 1.2em;
+  font-size: 2em;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
@@ -72,4 +75,11 @@ p {
 /******************* errors *****************/
 .error_text {
   color: $error;
+}
+/******************* tables *****************/
+th, td {
+  padding: 5px 10px;
+}
+th{
+  color: $darkGrey;
 }
