@@ -14,5 +14,4 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.rambling.slider
-//= require turbolinks
 //= require_tree .
