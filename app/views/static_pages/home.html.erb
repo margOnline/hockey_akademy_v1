@@ -1,8 +1,26 @@
 <% provide(:title, '') %>
 
-<div class="lightbox">
-  <% image_tag("home/photo_1.jpg") %>
+<div id="wrapper">
+  <div class="slider-wrapper theme-default">
+    <div class="ribbon"></div>
+      <div id="slider">
+        <%= image_tag "image1400.jpg" %>
+        <%= image_tag "image2400.jpg" %>
+        <%= image_tag "image3400.jpg" %>
+        <%= image_tag "image4400.jpg" %>
+      </div>
+    </div>
+  </div>
 </div>
+<script>
+  $(window).load(function(){
+    $('#slider').ramblingSlider({
+      'effect': 'fade',
+      'speed' : 1000,
+      'pauseTime' : 3000
+    });
+  });
+</script>
 <div>
   <%= link_to "Sign up", signup_path, class: 'btn btn-large btn-primary' %>
 </div>
