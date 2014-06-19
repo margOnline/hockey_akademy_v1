@@ -73,8 +73,13 @@ p {
 }
 
 /******************* errors *****************/
-.error_text {
+#error_explanation {
   color: $error;
+  h2 {
+    font-size: 1.2em;
+    text-align: left;
+    margin-bottom: -10px;
+  }
 }
 /******************* tables *****************/
 th, td {
