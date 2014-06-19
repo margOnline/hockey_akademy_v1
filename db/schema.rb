@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618213831) do
+ActiveRecord::Schema.define(version: 20140619173343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,28 +36,16 @@ ActiveRecord::Schema.define(version: 20140618213831) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "relationship"
-    t.string   "home_phone"
-    t.string   "mobile"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "mobile_number"
+    t.string   "home_phone_number"
+    t.string   "relation_to_player"
   end
 
   add_index "parents", ["email"], name: "index_parents_on_email", unique: true, using: :btree
   add_index "parents", ["reset_password_token"], name: "index_parents_on_reset_password_token", unique: true, using: :btree
-
-  create_table "users", force: true do |t|
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "email"
-    t.datetime "dob"
-    t.string   "phone"
-    t.string   "mobile"
-    t.string   "parent_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end

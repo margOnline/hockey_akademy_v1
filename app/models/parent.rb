@@ -3,4 +3,18 @@ class Parent < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  validates :first_name, :presence => true
+  validates :last_name, :presence => true
+  validates :password, :presence => true
+  validates :relation_to_player, :presence => true
+  validate :presence_of_phone_number
+
+
+  def presence_of_phone_number
+    if mobile_number.blank? && home_phone_number.blank?
+      errors.add(:mobile_phone_number, 'at least one phone number must be supplied')
+    end
+  end
+
 end
