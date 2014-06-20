@@ -4,10 +4,11 @@ class Parent < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :players
+
   validates :first_name, :presence => true
   validates :last_name, :presence => true
   validates :password, :presence => true
-  validates :relation_to_player, :presence => true
   validate :presence_of_phone_number
 
 

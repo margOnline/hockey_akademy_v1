@@ -27,6 +27,7 @@ group :test do
   gem 'factory_girl_rails', '4.2.1'
   gem 'minitest'
   gem 'should', require: false
+  gem 'shoulda-matchers', require: false
 end
 
 group :production do
