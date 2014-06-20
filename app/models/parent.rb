@@ -13,7 +13,7 @@ class Parent < ActiveRecord::Base
 
   def presence_of_phone_number
     if mobile_number.blank? && home_phone_number.blank?
-      errors.add(:mobile_phone_number, 'at least one phone number must be supplied')
+      errors.add(:mobile_phone_number, 'or Home phone number must be supplied')
     end
   end
 
