@@ -7,7 +7,6 @@ describe Parent do
       last_name: 'Doe',
       email: 'John@gmail.com',
       password: 'password',
-      relation_to_player: 'parent',
       mobile_number: '0774123456'
     )
   end
@@ -20,7 +19,6 @@ describe Parent do
   it { should respond_to(:email) }
   it { should respond_to(:mobile_number) }
   it { should respond_to(:home_phone_number) }
-  it { should respond_to(:relation_to_player) }
   it { should be_valid }
 
   it 'should not be valid with a phone number' do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140620170226) do
+ActiveRecord::Schema.define(version: 20140620172059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20140620170226) do
     t.string   "last_name"
     t.string   "mobile_number"
     t.string   "home_phone_number"
-    t.string   "relation_to_player"
   end
 
   add_index "parents", ["email"], name: "index_parents_on_email", unique: true, using: :btree
