@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140621155017) do
+ActiveRecord::Schema.define(version: 20140621163127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "camp_sessions", force: true do |t|
+    t.integer  "camp_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "camps", force: true do |t|
     t.string   "name"
@@ -28,6 +38,13 @@ ActiveRecord::Schema.define(version: 20140621155017) do
     t.string   "lastname"
     t.text     "bio"
     t.string   "gravatar"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", force: true do |t|
+    t.integer  "camp_id"
+    t.text     "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

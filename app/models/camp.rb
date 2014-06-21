@@ -1,6 +1,6 @@
 class Camp < ActiveRecord::Base
 
-  has_many :sessions
+  has_many :campSsessions
   has_one :location
 
   validates :name, :presence => true
