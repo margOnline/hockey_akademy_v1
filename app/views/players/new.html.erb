@@ -21,9 +21,8 @@
         <%= f.text_area :medical,  :cols => 40, :rows => 5 %>
       </li>
       <li>
-        <%= f.label :standard_ids, 'Playing standard' %>
-        <%= select_tag(:standard_ids, options_from_collection_for_select(
-              @standards, :id, :level, @standards), :prompt => 'Please select one') %>
+        <%= f.label :standard_id, 'Playing standard' %>
+        <%= f.collection_select(:standard_id, @standards, :id, :level, :prompt => 'Please select a playing standard') %>
       </li>
       <li>
         <%= f.label :allergies, 'List any allergies' %>
