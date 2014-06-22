@@ -15,6 +15,7 @@ describe Player do
   subject { @player }
 
   it { should belong_to(:parent) }
+  it { should belong_to(:standard) }
   it { should respond_to(:first_name) }
   it { should respond_to(:last_name) }
   it { should respond_to(:gender) }
