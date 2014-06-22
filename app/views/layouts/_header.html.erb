@@ -6,6 +6,11 @@
       <ul>
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Coach Profiles", coach_profiles_path %></li>
+        <% if current_parent %>
+          <li><%= link_to 'Sign out', destroy_parent_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'Sign in', new_parent_session_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>

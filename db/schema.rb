@@ -11,16 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140620172059) do
+ActiveRecord::Schema.define(version: 20140622132614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "camp_sessions", force: true do |t|
+    t.integer  "camp_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "camps", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "coaches", force: true do |t|
     t.string   "firstname"
     t.string   "lastname"
     t.text     "bio"
     t.string   "gravatar"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", force: true do |t|
+    t.integer  "camp_id"
+    t.text     "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,8 +83,16 @@ ActiveRecord::Schema.define(version: 20140620172059) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "parent_id"
+    t.integer  "standard_id"
   end
 
   add_index "players", ["parent_id"], name: "index_players_on_parent_id", using: :btree
+  add_index "players", ["standard_id"], name: "index_players_on_standard_id", using: :btree
+
+  create_table "standards", force: true do |t|
+    t.string   "level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
