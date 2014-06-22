@@ -6,8 +6,8 @@ class Player < ActiveRecord::Base
   validates :first_name, :presence => true
   validates :last_name, :presence => true
   validates :dob, :presence => true
-  validates :experience, :presence => true
+  validates :standard, :presence => true
   validates :gender, :presence => true
-
+  validates :parent, :presence => true
 
 end

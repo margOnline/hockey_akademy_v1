@@ -1,0 +1,41 @@
+<h2>Add a player</h2>
+
+<%= form_for @player, :url => parent_players_path(@parent, @player),
+      :html => { :class => 'general' } do |f| %>
+  <fieldset>
+    <ol>
+      <li>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+      </li>
+      <li>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+      </li>
+      <li>
+        <%= f.label :dob %>
+        <%= f.text_field :dob %>
+      </li>
+      <li>
+        <%= f.label :medical, 'Describe any medical conditions' %>
+        <%= f.text_area :medical,  :cols => 40, :rows => 5 %>
+      </li>
+      <li>
+        <%= f.label :standard_ids, 'Playing standard' %>
+        <%= select_tag(:standard_ids, options_from_collection_for_select(
+              @standards, :id, :level, @standards), :prompt => 'Please select one') %>
+      </li>
+      <li>
+        <%= f.label :allergies, 'List any allergies' %>
+        <%= f.text_area :allergies %>
+      </li>
+      <li>
+        <%= f.label :club, 'Current Hockey club' %>
+        <%= f.text_field :club %>
+      </li>
+    </ol>
+  </fieldset>
+  <div class="submit">
+    <button type="submit" class="btn">Save</button>
+  </div> <!-- div.submit -->
+<% end %>
