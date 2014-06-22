@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 ### Parents ###
   devise_for :parents
   resources :camps do
-    resources :campSessions
+    resources :camp_sessions
     resources :locations
   end
 
