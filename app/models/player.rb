@@ -1,6 +1,7 @@
 class Player < ActiveRecord::Base
 
   belongs_to :parent
+  belongs_to :standard
 
   validates :first_name, :presence => true
   validates :last_name, :presence => true
