@@ -17,12 +17,12 @@ FactoryGirl.define do
   #############################
 
   factory :camp do
-    association :campSession
     name        'Goalkeeping'
     description 'ipsem lorem'
   end
 
   factory :campSession do
+    association :camp
     title       'Penalties'
     description 'ipsem lorem de facto'
   end
