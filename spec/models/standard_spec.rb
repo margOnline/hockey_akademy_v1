@@ -2,9 +2,7 @@ require 'spec_helper'
 
 describe Standard do
     before do
-    @standard = Standard.new(
-      level: 'Cub'
-    )
+    @standard = FactoryGirl.create(:standard)
   end
 
   subject { @standard }

@@ -2,10 +2,7 @@ require 'spec_helper'
 
 describe CampSession do
   before do
-    @campSession = CampSession.new(
-      title: 'Penalties',
-      description: 'ipsem lorem de facto'
-    )
+    @campSession = FactoryGirl.create(:campSession)
   end
 
   subject { @campSession }

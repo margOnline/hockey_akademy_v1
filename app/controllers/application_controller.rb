@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def after_sign_in_path_for(resource)
+        new_parent_player_path(resource.id)
+  end
+
   def configure_permitted_params
     devise_parameter_sanitizer.for(:sign_up) do |u|
       u.permit(:first_name, :last_name, :email, :password, :password_confirmation, :mobile_number, :home_phone_number, :relation_to_player)

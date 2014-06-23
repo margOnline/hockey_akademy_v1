@@ -5,9 +5,17 @@ Rails.application.routes.draw do
 
 ### Parents ###
   devise_for :parents
+
+  resources :parents, :only => [:show] do
+    resources :players, :only => [:new, :create]
+  end
+
   resources :camps do
     resources :camp_sessions
     resources :locations
   end
 
+  resources :players do
+    resources :camp_sessions
+  end
 end

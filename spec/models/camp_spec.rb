@@ -2,15 +2,12 @@ require 'spec_helper'
 
 describe Camp do
   before do
-    @camp = Camp.new(
-      name: 'Penalty flicks',
-      description: 'ipsem lorem'
-    )
+    @camp = FactoryGirl.create(:camp)
   end
 
   subject { @camp }
 
-  it { should have_many(:sessions) }
+  it { should have_many(:campSessions) }
   it { should have_one(:location) }
   it { should respond_to(:name) }
   it { should respond_to(:description) }

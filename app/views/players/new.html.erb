@@ -1,0 +1,45 @@
+<h2>Add a player</h2>
+<%= form_for @player, :url => parent_players_path(@parent, @player),
+      :html => { :class => 'general' } do |f| %>
+  <%= render :partial => 'shared/error_messages', :locals => {:object => f.object } %>
+  <fieldset>
+    <ol>
+      <li>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+      </li>
+      <li>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+      </li>
+      <li>
+        <%= f.label :dob %>
+        <%= f.date_select :dob, :start_year => Date.today.year - 20, :end_year => Date.today.year - 4 %>
+      </li>
+      <li>
+        <%= f.label :gender, 'Gender' %>
+        <%= f.radio_button :gender, 'Male' %>Male
+        <%= f.radio_button :gender, 'Female' %>Female
+      </li>
+      <li>
+        <%= f.label :medical, 'Describe any medical conditions' %>
+        <%= f.text_area :medical,  :cols => 40, :rows => 5 %>
+      </li>
+      <li>
+        <%= f.label :standard_id, 'Playing standard' %>
+        <%= f.collection_select(:standard_id, @standards, :id, :level, :prompt => 'Select a playing standard') %>
+      </li>
+      <li>
+        <%= f.label :allergies, 'Describe any allergies' %>
+        <%= f.text_area :allergies %>
+      </li>
+      <li>
+        <%= f.label :club, 'Current Hockey club' %>
+        <%= f.text_field :club %>
+      </li>
+    </ol>
+  </fieldset>
+  <div class="submit">
+    <button type="submit" class="btn">Save</button>
+  </div> <!-- div.submit -->
+<% end %>
