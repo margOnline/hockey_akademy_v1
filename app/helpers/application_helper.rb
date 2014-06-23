@@ -8,4 +8,8 @@ module ApplicationHelper
       "#{base_title} | #{page_title}"
     end
   end
+
+  def full_name(first, last)
+    "#{first.titleize} #{last.titleize}"
+  end
 end

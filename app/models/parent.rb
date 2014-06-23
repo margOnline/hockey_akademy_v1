@@ -11,6 +11,9 @@ class Parent < ActiveRecord::Base
   validates :password, :presence => true
   validate :presence_of_phone_number
 
+  def full_name
+    "#{first_name.titleize} #{last_name.titleize}"
+  end
 
   def presence_of_phone_number
     if mobile_number.blank? && home_phone_number.blank?

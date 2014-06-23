@@ -1,0 +1,26 @@
+<div>
+  <h2>Parent Show</h2>
+  <p>Parent's Name: <%= @parent.full_name %></p>
+  <p><%= @parent.players.count %> Player(s) registered:</p>
+  <table>
+    <tr>
+      <th>Full name</th>
+      <th>Date of birth</th>
+      <th>Standard</th>
+      <th>Current Club</th>
+      <th>Medical Condition</th>
+      <th>Allergies</th>
+    </tr>
+    <% @parent.players.each do |player| %>
+      <tr>
+        <td><%= player.full_name %></td>
+        <td><%= player.dob %></td>
+        <td><%= player.standard.level.present? ? player.standard.level : '-' %></td>
+        <td><%= player.club.present? ? player.club : '-' %></td>
+        <td><%= player.medical.present? ? player.medical : '-' %></td>
+        <td><%= player.allergies.present? ? player.club : '-' %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= link_to 'Register a player', new_parent_player_path(@parent), :class => 'btn btn-primary' %>
+</div>
