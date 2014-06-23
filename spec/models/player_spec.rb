@@ -2,23 +2,9 @@ require 'spec_helper'
 
 describe Player do
   before do
-    @parent = Parent.new(
-      first_name: 'John',
-      last_name: 'Doe',
-      email: 'John@gmail.com',
-      password: 'password',
-      mobile_number: '0774123456'
-    )
-    @standard = Standard.new(:level => 'cub')
-    @player = Player.new(
-      first_name: 'Johnnie',
-      last_name: 'Doe',
-      gender: 'male',
-      standard: @standard,
-      dob: Time.new(2002,1,1),
-      club: 'Surrey',
-      parent: @parent
-    )
+    @parent = FactoryGirl.create(:parent)
+    @standard = FactoryGirl.create(:standard)
+    @player = FactoryGirl.create(:player)
   end
 
   subject { @player }

@@ -14,7 +14,7 @@
       </li>
       <li>
         <%= f.label :dob %>
-        <%= f.date_select :dob %>
+        <%= f.date_select :dob, :start_year => Date.today.year - 20, :end_year => Date.today.year - 4 %>
       </li>
       <li>
         <%= f.label :gender %>
