@@ -27,6 +27,11 @@ FactoryGirl.define do
     description 'ipsem lorem de facto'
   end
 
+  factory :coach do
+    first_name 'Alex'
+    last_name  'Ferguson'
+    bio        'ipsem lorem blah di blah'
+  end
   factory :location do
     name 'Brooklands'
   end

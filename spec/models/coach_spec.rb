@@ -1,5 +1,16 @@
 require 'spec_helper'
 
 describe Coach do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+    @coach = FactoryGirl.create(:coach)
+  end
+  subject { @coach }
+
+  it { should respond_to(:first_name) }
+  it { should respond_to(:last_name) }
+  it { should respond_to(:bio) }
+  it { should respond_to(:gravatar) }
+
+  it { should be_valid }
+  expect(@coach.fullname).to eq("Alex Ferguson")
 end
