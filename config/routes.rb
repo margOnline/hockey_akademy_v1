@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   end
 
   resources :players do
-    resources :camp_sessions
+    resources :camp_sessions, :through => :camps
   end
 end
