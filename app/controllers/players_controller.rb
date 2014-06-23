@@ -1,9 +1,8 @@
 class PlayersController < ApplicationController
+  before_filter :set_associations, :only => [:new, :create]
 
   def new
-    @standards = Standard.all
-    @parent = current_parent
-    @player = @parent.players.build
+    @player = Player.new
   end
 
   def create
@@ -21,5 +20,10 @@ class PlayersController < ApplicationController
   def player_params
     params[:player].permit(:first_name, :last_name, :dob, :club, :gender,
       :medical, :allergies, :standard_id, parent_attributes: [:parent_id])
+  end
+
+  def set_associations
+    @standards = Standard.all
+    @parent = current_parent
   end
 end

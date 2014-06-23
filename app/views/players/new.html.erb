@@ -1,7 +1,7 @@
 <h2>Add a player</h2>
-
-<%= form_for @player, :url => parent_players_path(@parent, @player),
+<%= form_for @player, :url => parent_players_path(current_parent, @player),
       :html => { :class => 'general' } do |f| %>
+  <%= render :partial => 'shared/error_messages', :locals => {:object => f.object } %>
   <fieldset>
     <ol>
       <li>
@@ -15,6 +15,10 @@
       <li>
         <%= f.label :dob %>
         <%= f.text_field :dob %>
+      </li>
+      <li>
+        <%= f.label :gender %>
+        <%= f.text_field :gender %>
       </li>
       <li>
         <%= f.label :medical, 'Describe any medical conditions' %>
