@@ -7,7 +7,7 @@ describe Location do
 
   subject { @location }
 
-  it { should belong_to(:camp) }
+  it { should have_one(:camp) }
   it { should respond_to(:name) }
   it { should be_valid }
 

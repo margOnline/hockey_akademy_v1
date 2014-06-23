@@ -1,0 +1,20 @@
+<div>
+  <h2>Camps</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+    </tr>
+    <% @camps.each do |camp| %>
+      <tr>
+        <td><%= camp.name %></td>
+        <td><%= camp.location.name %></td>
+        <td></td>
+        <td></td>
+        <td><%= link_to 'Full details', camp_path(camp) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

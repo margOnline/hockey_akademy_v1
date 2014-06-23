@@ -1,5 +1,5 @@
 class Location < ActiveRecord::Base
-  belongs_to :camp
+  has_one :camp
 
   validates :name, :presence => true
 end

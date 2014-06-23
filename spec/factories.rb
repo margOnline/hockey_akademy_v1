@@ -19,8 +19,10 @@ FactoryGirl.define do
   #############################
 
   factory :camp do
+    association :location
     name        'Goalkeeping'
     description 'ipsem lorem'
+    num_of_attendees 30
   end
 
   factory :campSession do
