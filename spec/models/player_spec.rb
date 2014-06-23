@@ -21,4 +21,9 @@ describe Player do
   it { should respond_to(:parent)}
   it { should be_valid }
 
+  it 'should display a full name' do
+    @player.save
+    expect(@player.full_name).to eq 'Junior Doe'
+  end
+
 end

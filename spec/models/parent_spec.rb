@@ -15,9 +15,15 @@ describe Parent do
   it { should respond_to(:home_phone_number) }
   it { should be_valid }
 
-  it 'should not be valid with a phone number' do
+  it 'should not be valid without a phone number' do
     @parent.mobile_number = ""
     @parent.should_not be_valid
   end
+
+  it 'should display a full name' do
+    @parent.save
+    expect(@parent.full_name).to eq 'John Doe'
+  end
+
 
 end
