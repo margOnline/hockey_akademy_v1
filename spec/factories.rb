@@ -52,5 +52,4 @@ FactoryGirl.define do
     level 'beginner'
   end
 
-
 end

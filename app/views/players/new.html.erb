@@ -1,5 +1,5 @@
 <h2>Add a player</h2>
-<%= form_for @player, :url => parent_players_path(current_parent, @player),
+<%= form_for @player, :url => parent_players_path(@parent, @player),
       :html => { :class => 'general' } do |f| %>
   <%= render :partial => 'shared/error_messages', :locals => {:object => f.object } %>
   <fieldset>
@@ -17,8 +17,9 @@
         <%= f.date_select :dob, :start_year => Date.today.year - 20, :end_year => Date.today.year - 4 %>
       </li>
       <li>
-        <%= f.label :gender %>
-        <%= f.text_field :gender %>
+        <%= f.label :gender, 'Gender' %>
+        <%= f.radio_button :gender, 'Male' %>Male
+        <%= f.radio_button :gender, 'Female' %> Female
       </li>
       <li>
         <%= f.label :medical, 'Describe any medical conditions' %>
@@ -38,6 +39,7 @@
       </li>
     </ol>
   </fieldset>
+  <%= f.hidden_field :parent, :value => @parent %>
   <div class="submit">
     <button type="submit" class="btn">Save</button>
   </div> <!-- div.submit -->
