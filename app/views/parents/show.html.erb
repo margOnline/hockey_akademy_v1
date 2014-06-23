@@ -15,8 +15,8 @@
       <tr>
         <td><%= player.full_name %></td>
         <td><%= player.dob %></td>
-        <td><%= player.standard.level.present? ? player.standard.level : 'None' %></td>
-        <td><%= player.club.present? ? player.club : 'None' %></td>
+        <td><%= player.standard.level.present? ? player.standard.level : ' -- ' %></td>
+        <td><%= player.club.present? ? player.club : ' -- ' %></td>
         <td><%= player.medical.present? ? player.medical : 'None' %></td>
         <td><%= player.allergies.present? ? player.club : 'None' %></td>
       </tr>
