@@ -19,7 +19,7 @@
       <li>
         <%= f.label :gender, 'Gender' %>
         <%= f.radio_button :gender, 'Male' %>Male
-        <%= f.radio_button :gender, 'Female' %> Female
+        <%= f.radio_button :gender, 'Female' %>Female
       </li>
       <li>
         <%= f.label :medical, 'Describe any medical conditions' %>
@@ -27,10 +27,10 @@
       </li>
       <li>
         <%= f.label :standard_id, 'Playing standard' %>
-        <%= f.collection_select(:standard_id, @standards, :id, :level, :prompt => 'Please select a playing standard') %>
+        <%= f.collection_select(:standard_id, @standards, :id, :level, :prompt => 'Select a playing standard') %>
       </li>
       <li>
-        <%= f.label :allergies, 'List any allergies' %>
+        <%= f.label :allergies, 'Describe any allergies' %>
         <%= f.text_area :allergies %>
       </li>
       <li>

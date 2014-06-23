@@ -7,6 +7,7 @@ class PlayersController < ApplicationController
 
   def create
     @player = Player.new(player_params)
+    @player.parent = @parent
     if @player.save
       flash[:notice] = 'Player added'
       redirect_to parent_path(current_parent)
