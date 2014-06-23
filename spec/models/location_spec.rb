@@ -2,9 +2,7 @@ require 'spec_helper'
 
 describe Location do
   before do
-    @location = Location.new(
-      name: 'Brookfields'
-    )
+    @location = FactoryGirl.create(:location)
   end
 
   subject { @location }

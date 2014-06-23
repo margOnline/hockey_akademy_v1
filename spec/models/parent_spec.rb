@@ -2,13 +2,7 @@ require 'spec_helper'
 
 describe Parent do
   before do
-    @parent = Parent.new(
-      first_name: 'John',
-      last_name: 'Doe',
-      email: 'John@gmail.com',
-      password: 'password',
-      mobile_number: '0774123456'
-    )
+    @parent = FactoryGirl.create(:parent)
   end
 
   subject { @parent }
