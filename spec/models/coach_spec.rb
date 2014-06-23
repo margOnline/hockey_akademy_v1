@@ -12,5 +12,9 @@ describe Coach do
   it { should respond_to(:gravatar) }
 
   it { should be_valid }
-  expect(@coach.fullname).to eq("Alex Ferguson")
+
+  it 'should display the fullname' do
+    @coach.save
+    expect(@coach.fullname).to eq("Alex Ferguson")
+  end
 end
