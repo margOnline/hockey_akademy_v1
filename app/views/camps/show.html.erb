@@ -2,5 +2,22 @@
   <h2><%= @camp.name %></h2>
   <p><%= @camp.description %></p>
   <p>Places available: <%= @camp.num_of_attendees %></p>
+  <h3>Sessions</h3>
+<table>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Start</th>
+      <th>End</th>
+    </tr>
+    <% @camp.campSessions.each do |session| %>
+      <tr>
+        <td><%= session.title %></td>
+        <td><%= session.description %></td>
+        <td><%= session.start_time.strftime("%A, %d %b %Y %l:%M %p") %></td>
+        <td><%= session.end_time.strftime("%A, %d %b %Y %l:%M %p") %></td>
+      </tr>
+    <% end %>
+  </table>
 
 </div>

@@ -1,15 +1,25 @@
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the CampsHelper. For example:
-#
-# describe CampsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       helper.concat_strings("this","that").should == "this that"
-#     end
-#   end
-# end
 describe CampsHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+    @camp = FactoryGirl.create(:camp)
+    @cs1 = FactoryGirl.create(:campSession,
+      :camp_id => @camp.id,
+      :start_time => Time.new(2014,7,7,9,0,0),
+      :end_time => Time.new(2014,7,7,17,0,0,0)
+    )
+    @cs2 = FactoryGirl.create(:campSession,
+      :camp_id => @camp.id,
+      :start_time => Time.new(2014,7,4,9,0,0),
+      :end_time => Time.new(2014,7,7,4,16,0,0)
+    )
+  end
+
+  it 'returns the earliest start date of all a camp\'s campSessions' do
+    expect(start_date_for(@camp)).to eq format(@cs2.start_time)
+  end
+
+  it 'returns the earliest start date of all a camp\'s campSessions' do
+    expect(end_date_for(@camp)).to eq format(@cs1.end_time)
+  end
 end
