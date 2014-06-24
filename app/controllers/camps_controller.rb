@@ -1,7 +1,7 @@
 class CampsController < ApplicationController
 
   def index
-    @camps = Camp.all
+    @camps = Camp.includes(:campSessions).all
   end
 
   def show
