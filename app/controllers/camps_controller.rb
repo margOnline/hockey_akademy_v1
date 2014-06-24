@@ -5,6 +5,6 @@ class CampsController < ApplicationController
   end
 
   def show
-    @camp = Camp.find(params[:id])
+    @camp = Camp.includes(:campSessions).find(params[:id])
   end
 end
