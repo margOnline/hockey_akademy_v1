@@ -1,6 +1,9 @@
 <% provide(:title, '') %>
 
 <div id="wrapper">
+  <h2>Next Camp: <%= @camp.name %></h2>
+  <p>Starts <%= start_date_for(@camp) %></p>
+  <%= link_to 'Details', camp_path(@camp) %>
   <div class="slider-wrapper theme-default">
     <div class="ribbon"></div>
       <div id="slider">

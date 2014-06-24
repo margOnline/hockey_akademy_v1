@@ -6,6 +6,6 @@ class CampSession < ActiveRecord::Base
   validates :start_time, :presence => true
   validates :end_time, :presence => true
 
-  scope :earliest, -> { minimum("start_time") }
+  scope :earliest, -> { order("start_time ASC").first }
 
 end
