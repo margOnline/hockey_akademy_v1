@@ -27,4 +27,10 @@ describe "Static pages" do
     it { should have_title(full_title('Coaches Profiles')) }
   end
 
+  describe "Registration page" do
+    before { visit registration_path }
+    it { should have_title(full_title('Registration')) }
+    it { should have_content('Registration') }
+  end
+
 end

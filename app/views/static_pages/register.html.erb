@@ -1,0 +1,11 @@
+<% provide(:title, 'Registration') %>
+<h2>Registration</h2>
+<form>
+  <fieldset>
+    <%= collection_select(:campSession, :campSession_id, @campSessions, :id, :title_with_start_date, {prompt: 'Select a camp'}) %>
+
+  </fieldset>
+  <div class="submit">
+    <button type="submit" class="btn">Save</button>
+  </div> <!-- div.submit -->
+</form>

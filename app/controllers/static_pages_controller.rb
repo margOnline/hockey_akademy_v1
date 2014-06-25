@@ -6,4 +6,10 @@ class StaticPagesController < ApplicationController
   def coach_profiles
     @coaches = Coach.all
   end
+
+  def register
+     @campSessions = CampSession.chronological
+    #@camps = Camp.includes(:campSessions).all
+  end
+
 end
