@@ -5,14 +5,14 @@ describe "Static pages" do
 
   describe "Home page" do
     before do
-      visit root_path
-      @later_camp = FactoryGirl.create(:camp)
-      @early_camp = FactoryGirl.create(:camp, :name => "Pre Season Training")
+      @early_camp = FactoryGirl.create(:camp)
+      @later_camp = FactoryGirl.create(:camp, :name => "Pre Season Training")
       @cs = FactoryGirl.create(:campSession,
-        :camp => @camp1,
+        :camp => @early_camp,
         :start_time => Time.new(2014,7,10,10,0,0),
         :end_time => Time.new(2014,7,10,16,0,0)
       )
+      visit root_path
     end
 
     it { should have_content('Hockey Akademy') }
