@@ -5,6 +5,7 @@ class CampSession < ActiveRecord::Base
   validates :description, :presence => true
   validates :start_time, :presence => true
   validates :end_time, :presence => true
+  validates :price, :presence => true
 
   scope :earliest, -> { order("start_time ASC").first }
   scope :chronological, -> {order("start_time ASC") }
