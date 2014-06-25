@@ -18,6 +18,10 @@ FactoryGirl.define do
   ### ALPHABETIZE THIS LIST ###
   #############################
 
+  factory :basket do
+    association :parent
+  end
+
   factory :camp do
     association :location
     name        'Goalkeeping'

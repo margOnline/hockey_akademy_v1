@@ -2,10 +2,10 @@
 <h2>Registration</h2>
 <form>
   <fieldset>
-    <%= collection_select(:campSession, :campSession_id, @campSessions, :id, :title_with_start_date, {prompt: 'Select a camp'}) %>
-
+    <%= collection_select(:campSession, :campSession_id, @campSessions, :id, :title_with_start_date, {prompt: 'Select a session(s)'}, { :multiple => true }) %>
+    <%= collection_select(:player, :player_id, @players, :id, :full_name, {prompt: 'Select a player'}, { :multiple => false }) %>
   </fieldset>
   <div class="submit">
-    <button type="submit" class="btn">Save</button>
+    <button type="submit" class="btn btn-primary">Add to Basket</button>
   </div> <!-- div.submit -->
 </form>

@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140623210702) do
+ActiveRecord::Schema.define(version: 20140625200122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "baskets", force: true do |t|
+    t.integer  "parent_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "baskets", ["parent_id"], name: "index_baskets_on_parent_id", using: :btree
 
   create_table "camp_sessions", force: true do |t|
     t.integer  "camp_id"

@@ -11,7 +11,7 @@ class Player < ActiveRecord::Base
   validates :parent, :presence => true
 
   def full_name
-    "#{first_name.titleize} #{last_name.titleize}"
+    @player = "#{first_name.titleize} #{last_name.titleize}"
   end
 
 end
