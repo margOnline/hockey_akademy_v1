@@ -8,7 +8,7 @@ describe Basket do
   subject { @basket }
 
   it { should belong_to(:parent) }
-  it { should have_many(:line_items)}
-  it { should respond_to(:parent)}
+  it { should have_many(:basket_items) }
+  it { should respond_to(:parent) }
   it { should be_valid }
 end
