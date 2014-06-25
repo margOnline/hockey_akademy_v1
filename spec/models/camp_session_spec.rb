@@ -12,6 +12,7 @@ describe CampSession do
   it { should respond_to(:description) }
   it { should respond_to(:start_time) }
   it { should respond_to(:end_time) }
+  it { should respond_to(:price) }
   it { should be_valid }
 
 

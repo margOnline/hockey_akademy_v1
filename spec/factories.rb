@@ -37,6 +37,7 @@ FactoryGirl.define do
     f.association :camp
     f.title       'Penalties'
     f.description 'ipsem lorem de facto'
+    f.price        30.00
     f.start_time   Time.new(2014,7,11,10,0,0)
     f.end_time     Time.new(2014,7,11,16,0,0)
   end
