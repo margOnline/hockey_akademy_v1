@@ -29,8 +29,8 @@ FactoryGirl.define do
     association :camp
     title       'Penalties'
     description 'ipsem lorem de facto'
-    start_time   Time.new(2014, 07, 11, 10,00,00)
-    end_time     Time.new(2014, 07, 11, 16,00,00)
+    start_time   Time.new(2014,7,11,10,0,0)
+    end_time     Time.new(2014,7,11,16,0,0)
   end
 
   factory :coach do
