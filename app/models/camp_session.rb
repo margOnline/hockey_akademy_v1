@@ -1,5 +1,7 @@
 class CampSession < ActiveRecord::Base
   belongs_to :camp
+  has_many :registrations
+  has_many :players, :through => :registrations
 
   validates :title, :presence => true
   validates :description, :presence => true
