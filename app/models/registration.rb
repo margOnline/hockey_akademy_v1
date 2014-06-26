@@ -1,4 +1,4 @@
 class Registration < ActiveRecord::Base
   belongs_to :player
-  belongs_to :campSession
+  belongs_to :camp_session
 end

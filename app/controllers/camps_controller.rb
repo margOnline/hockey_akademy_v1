@@ -1,10 +1,10 @@
 class CampsController < ApplicationController
 
   def index
-    @camps = Camp.includes(:campSessions).all
+    @camps = Camp.includes(:camp_sessions).all
   end
 
   def show
-    @camp = Camp.includes(:campSessions).find(params[:id])
+    @camp = Camp.includes(:camp_sessions).find(params[:id])
   end
 end

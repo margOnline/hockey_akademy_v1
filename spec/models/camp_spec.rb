@@ -7,7 +7,7 @@ describe Camp do
 
   subject { @camp }
 
-  it { should have_many(:campSessions) }
+  it { should have_many(:camp_sessions) }
   it { should belong_to(:location) }
   it { should respond_to(:name) }
   it { should respond_to(:description) }

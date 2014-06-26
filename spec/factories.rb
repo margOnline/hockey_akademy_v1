@@ -33,7 +33,7 @@ FactoryGirl.define do
     f.num_of_attendees 30
   end
 
-  factory :campSession do |f|
+  factory :camp_session do |f|
     f.association :camp
     f.title       'Penalties'
     f.description 'ipsem lorem de facto'
@@ -63,7 +63,7 @@ FactoryGirl.define do
 
   factory :registration do |f|
     f.association :player
-    f.association :campSession
+    f.association :camp_session
   end
 
   factory :standard do |f|

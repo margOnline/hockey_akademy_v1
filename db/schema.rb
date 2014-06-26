@@ -109,13 +109,13 @@ ActiveRecord::Schema.define(version: 20140625223322) do
   add_index "players", ["standard_id"], name: "index_players_on_standard_id", using: :btree
 
   create_table "registrations", force: true do |t|
-    t.integer  "campSession_id"
+    t.integer  "camp_session_id"
     t.integer  "player_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "registrations", ["campSession_id"], name: "index_registrations_on_campSession_id", using: :btree
+  add_index "registrations", ["camp_session_id"], name: "index_registrations_on_camp_session_id", using: :btree
   add_index "registrations", ["player_id"], name: "index_registrations_on_player_id", using: :btree
 
   create_table "standards", force: true do |t|

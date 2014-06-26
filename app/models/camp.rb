@@ -1,6 +1,6 @@
 class Camp < ActiveRecord::Base
 
-  has_many :campSessions
+  has_many :camp_sessions
   belongs_to :location
 
   validates :name, :presence => true

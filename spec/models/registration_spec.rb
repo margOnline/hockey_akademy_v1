@@ -7,5 +7,5 @@ describe Registration do
    subject { @registration }
 
   it { should belong_to(:player) }
-  it { should belong_to(:campSession)}
+  it { should belong_to(:camp_session)}
 end

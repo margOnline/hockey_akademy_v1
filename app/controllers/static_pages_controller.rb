@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
   end
 
   def register
-     @campSessions = CampSession.chronological
+     @camp_sessions = CampSession.chronological
      @players = current_parent.players if parent_signed_in?
     #@camps = Camp.includes(:campSessions).all
   end

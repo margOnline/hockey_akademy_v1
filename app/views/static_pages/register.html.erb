@@ -2,7 +2,7 @@
 <h2>Registration</h2>
 <form>
   <fieldset>
-    <%= collection_select(:campSession, :campSession_id, @campSessions, :id, :title_with_start_date, {prompt: 'Select a session(s)'}, { :multiple => true }) %>
+    <%= collection_select(:camp_session, :camp_session_id, @camp_sessions, :id, :title_with_start_date, {prompt: 'Select a session(s)'}, { :multiple => true }) %>
     <%= collection_select(:player, :player_id, @players, :id, :full_name, {prompt: 'Select a player'}, { :multiple => false }) %>
   </fieldset>
   <div class="submit">
