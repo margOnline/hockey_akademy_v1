@@ -1,0 +1,29 @@
+<%= redirect_to root_path unless current_parent %>
+<% provide(:title, 'Camp Registrations') %>
+<p>Your Registrations</p>
+<table>
+  <% @players.each do |player| %>
+    <% if player.camp_sessions.any? %>
+      <tr>
+        <th>Player: <%= player.full_name %></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th>Camp</th>
+        <th>Session</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+      </tr>
+      <% player.camp_sessions.each do |cs| %>
+        <tr>
+          <th></th>
+          <th><%= cs.camp.name %></th>
+          <th><%= cs.title %></th>
+          <th><%= cs.start_time.strftime("%A, %d %b %Y %l:%M %p") %></th>
+          <th><%= cs.end_time.strftime("%A, %d %b %Y %l:%M %p") %></th>
+          <th><%= link_to 'Delete', :method => :delete, :id => cs.id %></th>
+        </tr>
+      <% end %>
+    <% end %>
+  <% end %>
+</table>

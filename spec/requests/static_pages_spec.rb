@@ -7,7 +7,7 @@ describe "Static pages" do
     before do
       @early_camp = FactoryGirl.create(:camp)
       @later_camp = FactoryGirl.create(:camp, :name => "Pre Season Training")
-      @cs = FactoryGirl.create(:campSession,
+      @cs = FactoryGirl.create(:camp_session,
         :camp => @early_camp,
         :start_time => Time.new(2014,7,10,10,0,0),
         :end_time => Time.new(2014,7,10,16,0,0)

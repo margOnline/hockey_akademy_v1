@@ -11,10 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140623210702) do
+ActiveRecord::Schema.define(version: 20140627075125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "basket_items", force: true do |t|
+    t.integer  "basket_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "basket_items", ["basket_id"], name: "index_basket_items_on_basket_id", using: :btree
+
+  create_table "baskets", force: true do |t|
+    t.integer  "parent_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "baskets", ["parent_id"], name: "index_baskets_on_parent_id", using: :btree
+
+  create_table "camp_registrations", force: true do |t|
+    t.integer  "camp_session_id"
+    t.integer  "player_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "camp_registrations", ["camp_session_id"], name: "index_camp_registrations_on_camp_session_id", using: :btree
+  add_index "camp_registrations", ["player_id"], name: "index_camp_registrations_on_player_id", using: :btree
 
   create_table "camp_sessions", force: true do |t|
     t.integer  "camp_id"
@@ -24,6 +50,7 @@ ActiveRecord::Schema.define(version: 20140623210702) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "price"
   end
 
   create_table "camps", force: true do |t|

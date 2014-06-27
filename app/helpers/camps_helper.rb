@@ -1,10 +1,10 @@
 module CampsHelper
   def start_date_for(camp)
-    format(camp.campSessions.min_by{|cs| cs.start_time}.start_time)
+    format(camp.camp_sessions.min_by{|cs| cs.start_time}.start_time)
   end
 
   def end_date_for(camp)
-    format(camp.campSessions.max_by{|cs| cs.end_time}.end_time)
+    format(camp.camp_sessions.max_by{|cs| cs.end_time}.end_time)
   end
 
   def format(time)

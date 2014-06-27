@@ -2,6 +2,8 @@ class Player < ActiveRecord::Base
 
   belongs_to :parent
   belongs_to :standard
+  has_many :camp_registrations
+  has_many :camp_sessions, :through => :camp_registrations
 
   validates :first_name, :presence => true
   validates :last_name, :presence => true
@@ -11,7 +13,7 @@ class Player < ActiveRecord::Base
   validates :parent, :presence => true
 
   def full_name
-    "#{first_name.titleize} #{last_name.titleize}"
+    @player = "#{first_name.titleize} #{last_name.titleize}"
   end
 
 end
