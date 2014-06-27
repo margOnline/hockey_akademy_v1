@@ -4,8 +4,8 @@
       :html => { :class => 'general' } do |f| %>
   <%= render :partial => 'shared/error_messages', :locals => {:object => f.object } %>
   <fieldset>
-    <%= f.collection_select(:camp_session_id, @camp_sessions, :id, :title_with_start_date, { :multiple => true }, {prompt: 'Select a session(s)'}) %>
-    <%= f.collection_select(:player_id, @players, :id, :full_name, {prompt: 'Select a player'}, { :multiple => false }) %>
+    <%= f.collection_select(:camp_session_id, @camp_sessions, :id, :title_with_start_date, {prompt: 'Select a session(s)'}, {:multiple => true }) %>
+    <%= f.collection_select(:player_id, @players, :id, :full_name, {prompt: 'Select a player'}) %>
   </fieldset>
   <div class="submit">
     <%= link_to 'Book', new_parent_camp_registration_path, :class => "btn btn-primary" %>
