@@ -6,9 +6,11 @@ class CampRegistrationsController < ApplicationController
   end
 
   def create
-    @camp_registration = CampRegistration.new([registration_params])
+    @camp_registration = CampRegistration.new(camp_registration_params)
     if @camp_registration.save
-      #TODO implement booking functionality
+      #TODO implement saving / redirecting, probs to checkout. Need UI from client
+      flash[:success] = "Player registered successfully"
+      redirect_to root_path
     else
       render 'new'
     end
@@ -22,6 +24,6 @@ class CampRegistrationsController < ApplicationController
   private
 
   def camp_registration_params
-    params.permit(:camp_registration).require(:camp_session_id, :player_id)
+    params.require(:camp_registration).permit(:camp_session_id, :player_id)
   end
 end
