@@ -4,7 +4,6 @@ class CampRegistrationCollection
   attr_accessor :cs_ids, :player_id, :params
 
   def initialize(params)
-    pry
     @cs_ids = params[:camp_session_id]
     @player_id = params[:player_id]
   end

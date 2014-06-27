@@ -11,7 +11,6 @@
         <tr>
           <th><%= player.full_name %></th>
         </tr>
-        <% player.camp_sessions.each do |cs| %>
         <tr>
           <th></th>
           <th>Camp</th>
@@ -19,6 +18,7 @@
           <th>Start Time</th>
           <th>End Time</th>
         </tr>
+        <% player.camp_sessions.each do |cs| %>
         <tr>
           <th></th>
           <th><%= cs.camp.name %></th>
