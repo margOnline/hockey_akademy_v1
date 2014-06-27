@@ -1,7 +1,7 @@
 class CampRegistrationCollection
   include ActiveModel::Validations
 
-  attr_accessor :cs_ids, :player_id, :params
+  attr_accessor :cs_ids, :player_id
 
   def initialize(params)
     @cs_ids = params[:camp_session_id]
