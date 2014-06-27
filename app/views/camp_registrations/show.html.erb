@@ -1,0 +1,20 @@
+<%= redirect_to root_path unless current_parent %>
+<% provide(:title, 'Registration') %>
+<h2>Registration</h2>
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Session</th>
+  </tr>
+  <tr>
+    <% @camp_registrations.each do |cr| %>
+      <% cr.players.each do |p| %>
+      <th><%= p.full_name %></th>
+        <% p.camp_sessions.each do |camp_session| %>
+        <th>camp_session.title</th>
+        <th>camp_session.start_time.strftime("%A, %d %b %Y %l:%M %p")</th>
+        <th>camp_session.end_time.strftime("%A, %d %b %Y %l:%M %p")</th>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

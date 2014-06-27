@@ -8,7 +8,7 @@ describe CampSession do
   subject { @camp_session }
 
   it { should belong_to(:camp) }
-  it { should have_many(:registrations) }
+  it { should have_many(:camp_registrations) }
   it { should respond_to(:title) }
   it { should respond_to(:description) }
   it { should respond_to(:start_time) }

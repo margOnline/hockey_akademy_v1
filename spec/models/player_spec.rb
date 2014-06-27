@@ -11,7 +11,7 @@ describe Player do
 
   it { should belong_to(:parent) }
   it { should belong_to(:standard) }
-  it { should have_many(:registrations)}
+  it { should have_many(:camp_registrations)}
   it { should respond_to(:first_name) }
   it { should respond_to(:last_name) }
   it { should respond_to(:gender) }

@@ -1,11 +1,11 @@
-<% provide(:title, 'Registration') %>
-<h2>Registration</h2>
+<% provide(:title, 'Camp Registration') %>
+<h2>Camp Registration</h2>
 <form>
   <fieldset>
     <%= collection_select(:camp_session, :camp_session_id, @camp_sessions, :id, :title_with_start_date, {prompt: 'Select a session(s)'}, { :multiple => true }) %>
     <%= collection_select(:player, :player_id, @players, :id, :full_name, {prompt: 'Select a player'}, { :multiple => false }) %>
   </fieldset>
   <div class="submit">
-    <%= link_to 'Book', new_player_camp_session_path, :class => "btn btn-primary" %>
+    <%= link_to 'Book', new_parent_camp_registration_path(current_parent, :class => "btn btn-primary" %>
   </div> <!-- div.submit -->
 </form>

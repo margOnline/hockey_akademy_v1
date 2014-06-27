@@ -61,7 +61,7 @@ FactoryGirl.define do
     f.dob                   Time.current - 12.years
   end
 
-  factory :registration do |f|
+  factory :camp_registration do |f|
     f.association :player
     f.association :camp_session
   end

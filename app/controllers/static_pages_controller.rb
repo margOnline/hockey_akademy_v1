@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
   def coach_profiles
     @coaches = Coach.all
   end
-
+#TODO remove this method
   def register
      @camp_sessions = CampSession.chronological
      @players = current_parent.players if parent_signed_in?
