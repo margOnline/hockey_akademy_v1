@@ -4,8 +4,6 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'minitest/autorun'
 require 'rspec/autorun'
-require 'shoulda/matchers'
-# require 'mint_assertions'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -43,5 +41,4 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
   config.include Capybara::DSL
-  config.include MintAssertions
 end
