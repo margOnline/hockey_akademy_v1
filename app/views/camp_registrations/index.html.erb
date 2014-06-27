@@ -13,6 +13,7 @@
         <th>Session</th>
         <th>Start Time</th>
         <th>End Time</th>
+        <th>Price</th>
       </tr>
       <% player.camp_sessions.each do |cs| %>
         <tr>
@@ -21,9 +22,18 @@
           <th><%= cs.title %></th>
           <th><%= cs.start_time.strftime("%A, %d %b %Y %l:%M %p") %></th>
           <th><%= cs.end_time.strftime("%A, %d %b %Y %l:%M %p") %></th>
-          <th><%= link_to 'Delete', :method => :delete, :id => cs.id %></th>
+          <th><%= cs.price %></th>
+          <th><%= link_to 'Delete', :method => :delete, :id => cs.id, data: { confirm: "Are you sure" } %></th>
         </tr>
       <% end %>
     <% end %>
+    <tr>
+      <th>Total amount due</th>
+    </tr>
+    <tr>
+      <th><%= total %></th>
+    </tr>
   <% end %>
 </table>
+
+

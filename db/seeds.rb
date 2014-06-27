@@ -40,15 +40,15 @@ if Rails.env.development?
   camp5 = Camp.create(:name => "Match Play", :description => description, :location_id => location2.id, :num_of_attendees => 25)
 
   CampSession.create([
-    {:camp_id => camp1.id, :start_time => Time.new(2014, 8, 1, 10, 0, 0), :end_time => Time.new(2014, 8, 1, 16, 0, 0), :title => "Penalties", :description => short_descrip},
-    {:camp_id => camp1.id, :start_time => Time.new(2014, 8, 2, 10, 0, 0), :end_time => Time.new(2014, 8, 2, 16, 0, 0), :title => "Short Corners", :description => short_descrip},
-    {:camp_id => camp1.id, :start_time => Time.new(2014, 8, 3, 10, 0, 0), :end_time => Time.new(2014, 8, 3, 16, 0, 0), :title => "Long Corners", :description => short_descrip},
-    {:camp_id => camp2.id, :start_time => Time.new(2014, 9, 1, 10, 0, 0), :end_time => Time.new(2014, 9, 1, 16, 0, 0), :title => "Power plays", :description => short_descrip},
-    {:camp_id => camp2.id, :start_time => Time.new(2014, 9, 2, 10, 0, 0), :end_time => Time.new(2014, 9, 2, 16, 0, 0), :title => "Corners", :description => short_descrip},
-    {:camp_id => camp2.id, :start_time => Time.new(2014, 9, 3, 10, 0, 0), :end_time => Time.new(2014, 9, 3, 16, 0, 0), :title => "Breakaways", :description => short_descrip},
-    {:camp_id => camp3.id, :start_time => Time.new(2014, 7, 1, 10, 0, 0), :end_time => Time.new(2014, 7, 1, 16, 0, 0), :title => "Corners", :description => short_descrip},
-    {:camp_id => camp3.id, :start_time => Time.new(2014, 7, 2, 10, 0, 0), :end_time => Time.new(2014, 7, 2, 16, 0, 0), :title => "Breakaways", :description => short_descrip},
-    {:camp_id => camp3.id, :start_time => Time.new(2014, 7, 3, 10, 0, 0), :end_time => Time.new(2014, 7, 3, 16, 0, 0), :title => "Power Plays", :description => short_descrip}
+    {:camp_id => camp1.id, :start_time => Time.new(2014, 8, 1, 10, 0, 0), :end_time => Time.new(2014, 8, 1, 16, 0, 0), :title => "Penalties", :description => short_descrip, :price => 30.00},
+    {:camp_id => camp1.id, :start_time => Time.new(2014, 8, 2, 10, 0, 0), :end_time => Time.new(2014, 8, 2, 16, 0, 0), :title => "Short Corners", :description => short_descrip, :price => 30.00},
+    {:camp_id => camp1.id, :start_time => Time.new(2014, 8, 3, 10, 0, 0), :end_time => Time.new(2014, 8, 3, 16, 0, 0), :title => "Long Corners", :description => short_descrip, :price => 30.00},
+    {:camp_id => camp2.id, :start_time => Time.new(2014, 9, 1, 10, 0, 0), :end_time => Time.new(2014, 9, 1, 16, 0, 0), :title => "Power plays", :description => short_descrip, :price => 30.00},
+    {:camp_id => camp2.id, :start_time => Time.new(2014, 9, 2, 10, 0, 0), :end_time => Time.new(2014, 9, 2, 16, 0, 0), :title => "Corners", :description => short_descrip, :price => 30.00},
+    {:camp_id => camp2.id, :start_time => Time.new(2014, 9, 3, 10, 0, 0), :end_time => Time.new(2014, 9, 3, 16, 0, 0), :title => "Breakaways", :description => short_descrip, :price => 30.00},
+    {:camp_id => camp3.id, :start_time => Time.new(2014, 7, 1, 10, 0, 0), :end_time => Time.new(2014, 7, 1, 16, 0, 0), :title => "Corners", :description => short_descrip, :price => 30.00},
+    {:camp_id => camp3.id, :start_time => Time.new(2014, 7, 2, 10, 0, 0), :end_time => Time.new(2014, 7, 2, 16, 0, 0), :title => "Breakaways", :description => short_descrip, :price => 30.00},
+    {:camp_id => camp3.id, :start_time => Time.new(2014, 7, 3, 10, 0, 0), :end_time => Time.new(2014, 7, 3, 16, 0, 0), :title => "Power Plays", :description => short_descrip, :price => 30.00}
     ])
   Coach.create([
     {:first_name => "Alex", :last_name => "Ferguson", :bio => bio, :gravatar => "coach1.gif"},
