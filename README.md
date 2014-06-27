@@ -29,7 +29,7 @@ Standard setup
 
 6.  Run tests to make sure they pass with your environment:
 
-        rake test
+        rspec spec
 
 7.  Run the app! Boot your web server of choice. Options include:
 
