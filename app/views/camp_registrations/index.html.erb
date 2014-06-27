@@ -4,21 +4,17 @@
 <table>
   <% @players.each do |player| %>
     <% if player.camp_sessions.any? %>
-
-        <tr>
-          <th>Player</th>
-        </tr>
-        <tr>
-          <th><%= player.full_name %></th>
-        </tr>
-        <tr>
-          <th></th>
-          <th>Camp</th>
-          <th>Session</th>
-          <th>Start Time</th>
-          <th>End Time</th>
-        </tr>
-        <% player.camp_sessions.each do |cs| %>
+      <tr>
+        <th>Player: <%= player.full_name %></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th>Camp</th>
+        <th>Session</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+      </tr>
+      <% player.camp_sessions.each do |cs| %>
         <tr>
           <th></th>
           <th><%= cs.camp.name %></th>
