@@ -1,8 +1,9 @@
 class CampRegistrationsController < ApplicationController
+
+  before_action :set_associations, :only => [:new, :create]
+
   def new
     @camp_registration = CampRegistration.new
-    @camp_sessions = CampSession.chronological
-    @players = current_parent.players if parent_signed_in?
   end
 
   def create
@@ -26,4 +27,10 @@ class CampRegistrationsController < ApplicationController
   def camp_registration_params
     params.require(:camp_registration).permit(:camp_session_id, :player_id)
   end
+
+  def set_associations
+    @camp_sessions = CampSession.chronological
+    @players = current_parent.players if parent_signed_in?
+  end
+
 end

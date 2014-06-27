@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :locations
   end
 
-  resources :players do , :only => [:show] do
+  resources :players, :only => [:show] do
     resources :camp_sessions, :through => :camps
     resources :registrations
   end

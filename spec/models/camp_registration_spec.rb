@@ -8,4 +8,5 @@ describe CampRegistration do
 
   it { should belong_to(:player) }
   it { should belong_to(:camp_session)}
+  it { should be_valid }
 end
