@@ -1,15 +1,13 @@
+# encoding: UTF-8
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the CampRegistrationsHelper. For example:
-#
-# describe CampRegistrationsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       helper.concat_strings("this","that").should == "this that"
-#     end
-#   end
-# end
 describe CampRegistrationsHelper do
-
+  before do
+    @cr = FactoryGirl.create(:camp_registration)
+  end
+  describe "total" do
+    it "returns the total of camp session prices formatted as a currency" do
+      helper.total(@cr).should eq "£30.00"
+    end
+  end
 end
