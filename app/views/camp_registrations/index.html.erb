@@ -1,39 +1,24 @@
 <%= redirect_to root_path unless current_parent %>
 <% provide(:title, 'Camp Registrations') %>
 <p>Your Registrations</p>
-<table>
-  <% @players.each do |player| %>
-    <% if player.camp_sessions.any? %>
+<% if @camp_registrations.empty? %>
+  <p>You have no registrations.</p>
+<% else %>
+  <table>
+    <tr>
+      <th>Session</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Price</th>
+    </tr>
+    <% @camp_registrations.each do |cr| %>
       <tr>
-        <th>Player: <%= player.full_name %></th>
+        <th><%= cr.camp_session.title %></th>
+        <th><%= cr.camp_session.start_time.strftime("%A, %d %b %Y %l:%M %p") %></th>
+        <th><%= cr.camp_session.end_time.strftime("%A, %d %b %Y %l:%M %p") %></th>
+        <th><%= cr.camp_session.price %></th>
+        <th><%= link_to 'Delete', :confirm => "Are you sure?", :method => :delete, :id => cr.id %></th>
       </tr>
-      <tr>
-        <th></th>
-        <th>Camp</th>
-        <th>Session</th>
-        <th>Start Time</th>
-        <th>End Time</th>
-        <th>Price</th>
-      </tr>
-      <% player.camp_sessions.each do |cs| %>
-        <tr>
-          <th></th>
-          <th><%= cs.camp.name %></th>
-          <th><%= cs.title %></th>
-          <th><%= cs.start_time.strftime("%A, %d %b %Y %l:%M %p") %></th>
-          <th><%= cs.end_time.strftime("%A, %d %b %Y %l:%M %p") %></th>
-          <th><%= cs.price %></th>
-          <th><%= link_to 'Delete', :method => :delete, :id => cs.id, data: { confirm: "Are you sure" } %></th>
-        </tr>
-      <% end %>
     <% end %>
-    <tr>
-      <th>Total amount due</th>
-    </tr>
-    <tr>
-      <th><%= total %></th>
-    </tr>
-  <% end %>
-</table>
-
-
+  </table>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140627075125) do
+ActiveRecord::Schema.define(version: 20140628160640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,9 +37,11 @@ ActiveRecord::Schema.define(version: 20140627075125) do
     t.integer  "player_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parent_id"
   end
 
   add_index "camp_registrations", ["camp_session_id"], name: "index_camp_registrations_on_camp_session_id", using: :btree
+  add_index "camp_registrations", ["parent_id"], name: "index_camp_registrations_on_parent_id", using: :btree
   add_index "camp_registrations", ["player_id"], name: "index_camp_registrations_on_player_id", using: :btree
 
   create_table "camp_sessions", force: true do |t|

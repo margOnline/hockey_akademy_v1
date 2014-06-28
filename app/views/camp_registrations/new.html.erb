@@ -2,7 +2,7 @@
 <h2>Camp Registration</h2>
 <%= form_for [current_parent, @camp_registration],
       :html => { :class => 'general' } do |f| %>
-  <%= render :partial => 'shared/error_messages', :locals => {:object => f.object } %>
+  <%= render :partial => 'shared/error_messages', :locals => { :object => f.object } %>
   <fieldset>
     <%= f.collection_select(:camp_session_id, @camp_sessions, :id, :title_with_start_date, {prompt: 'Select a session(s)'}, {:multiple => true }) %>
     <%= f.collection_select(:player_id, @players, :id, :full_name, {prompt: 'Select a player'}) %>

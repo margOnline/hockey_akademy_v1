@@ -1,11 +1,9 @@
 class CampRegistrationsController < ApplicationController
 
   before_action :set_associations, :only => [:new, :create]
-  before_action
 
   def index
-    @camp_registrations = CampRegistration.all
-    @players = current_parent.players
+    @camp_registrations = CampRegistration.where(:parent_id => current_parent.id)
   end
 
   def new
@@ -13,8 +11,8 @@ class CampRegistrationsController < ApplicationController
   end
 
   def create
-    @crc = CampRegistrationCollection.new(camp_registration_params)
-    if @crc.save
+    crc = CampRegistrationCollection.new(camp_registration_params, @parent.id)
+    if crc.save
       flash[:success] = "Player registered"
       redirect_to parent_camp_registrations_path
     else
@@ -27,8 +25,8 @@ class CampRegistrationsController < ApplicationController
       where :camp_session_id => params[:camp_session_id], :player_id => params[:player_id])
   end
 
-  def delete
-    CampRegistration.destroy(params[:id])
+  def destroy
+    CampRegistration.find(params[:id]).destroy
     redirect_to parent_camp_registrations_path
   end
 
@@ -36,12 +34,14 @@ class CampRegistrationsController < ApplicationController
 
   def camp_registration_params
     clear_blank_params(params)
-    params.require(:camp_registration).permit({:camp_session_id => []}, :player_id)
+    params.require(:camp_registration).permit(
+      {:camp_session_id => []}, :player_id, :parent_id)
   end
 
   def set_associations
     @camp_sessions = CampSession.chronological
     @players = current_parent.players if parent_signed_in?
+    @parent = current_parent if parent_signed_in?
   end
 
   def clear_blank_params(params)

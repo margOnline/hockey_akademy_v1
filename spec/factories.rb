@@ -64,6 +64,7 @@ FactoryGirl.define do
   factory :camp_registration do |f|
     f.association :player
     f.association :camp_session
+    f.association :parent
   end
 
   factory :standard do |f|
