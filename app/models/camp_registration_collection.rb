@@ -1,7 +1,10 @@
 class CampRegistrationCollection
   include ActiveModel::Validations
 
-  attr_accessor :cs_ids, :player_id, :parent_id
+  validates :params, :presence => true
+  validates_numericality_of :parent_id, :only_integer => true
+
+  attr_accessor :cs_ids, :player_id, :parent_id, :params
 
   def initialize(params, parent_id)
     @cs_ids = params[:camp_session_id]
@@ -9,7 +12,7 @@ class CampRegistrationCollection
     @parent_id = parent_id
   end
 
-  def save
+  def save!
     @cs_ids.each do |cs_id|
       cr = CampRegistration.new(
         :camp_session_id => cs_id,

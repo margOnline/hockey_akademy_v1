@@ -1,6 +1,6 @@
 <% provide(:title, 'New Camp Registration') %>
 <h2>Camp Registration</h2>
-<%= form_for [current_parent, @camp_registration],
+<%= form_for [@parent, @camp_registration],
       :html => { :class => 'general' } do |f| %>
   <%= render :partial => 'shared/error_messages', :locals => { :object => f.object } %>
   <fieldset>
