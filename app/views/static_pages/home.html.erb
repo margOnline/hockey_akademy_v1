@@ -1,14 +1,13 @@
 <% provide(:title, '') %>
-
+<%= link_to_if(current_parent.nil?, "Sign in / Sign up to book a camp", new_parent_session_path) do
+     link_to('Book a camp', new_parent_camp_registration_path(current_parent), :class => "btn btn-primary")
+   end
+  %>
 <div id="wrapper">
   <h2>Next Camp: <%= @camp.name %></h2>
   <p>Starts <%= start_date_for(@camp) %>
   <%= link_to 'Details', camp_path(@camp) %></p>
-  <%=
-   link_to_if(current_parent.nil?, "Sign in / Sign up to book a camp", new_parent_session_path) do
-     link_to('Book a camp', new_parent_camp_registration_path(current_parent))
-   end
-  %>
+
   <div class="slider-wrapper theme-default">
     <div class="ribbon"></div>
       <div id="slider">
