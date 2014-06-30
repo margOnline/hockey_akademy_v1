@@ -1,10 +1,9 @@
 <header id="site-header" class="site-head" role="banner">
-  <%= image_tag("logo.png", size: "100x100", alt: "logo") %>
+  <%= link_to image_tag("logo.png", size: "100x100", alt: "logo"), root_path %>
   <div id="site-logo"><%= BRAND_NAME %></div>
   <div class="container">
     <nav class="site-nav">
       <ul>
-        <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Coach Profiles", coach_profiles_path %></li>
         <% if current_parent %>
           <li><%= link_to 'Camps', camps_path %></li>

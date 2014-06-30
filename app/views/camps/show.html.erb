@@ -1,4 +1,5 @@
 <div>
+  <%= render :partial => 'shared/register_camp_link'  %>
   <h2><%= @camp.name %></h2>
   <p><%= @camp.description %></p>
   <p>Places available: <%= @camp.num_of_attendees %></p>
@@ -19,5 +20,4 @@
       </tr>
     <% end %>
   </table>
-
 </div>
