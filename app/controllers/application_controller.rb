@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(resource)
-        new_parent_player_path(resource.id)
+    new_parent_camp_registration_path(resource.id)
   end
 
   def configure_permitted_params

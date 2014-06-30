@@ -4,10 +4,11 @@
   <div class="container">
     <nav class="site-nav">
       <ul>
-        <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Coach Profiles", coach_profiles_path %></li>
+        <li><%= link_to 'Camps', camps_path %></li>
         <% if current_parent %>
-          <li><%= link_to 'Camps', camps_path %></li>
+          <li><%= link_to 'Register for a camp', new_parent_camp_registration_path(current_parent.id) %></li>
+          <li><%= link_to 'Add a player', new_parent_player_path(current_parent.id) %></li>
           <li><%= link_to 'Sign out', destroy_parent_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "Sign up", new_parent_registration_path %></li>

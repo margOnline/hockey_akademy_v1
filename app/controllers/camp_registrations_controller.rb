@@ -7,7 +7,12 @@ class CampRegistrationsController < ApplicationController
   end
 
   def new
-    @camp_registration = CampRegistration.new
+    if current_parent.players.empty?
+      flash[:alert] = "You must sign up a player before you can register to a camp"
+      redirect_to new_parent_player_path
+    else
+      @camp_registration = CampRegistration.new
+    end
   end
 
   def create
@@ -19,11 +24,6 @@ class CampRegistrationsController < ApplicationController
       @camp_registration = CampRegistration.new(camp_registration_params)
       render 'new'
     end
-  end
-
-  def show
-    @camp_registrations = CampRegistration.find(
-      where :camp_session_id => params[:camp_session_id], :player_id => params[:player_id])
   end
 
   def destroy
