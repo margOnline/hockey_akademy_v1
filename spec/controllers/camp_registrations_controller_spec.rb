@@ -16,6 +16,7 @@ describe CampRegistrationsController do
   it 'renders the camp_registration new form for parent with players' do
     parent_with_player = FactoryGirl.create(:parent)
     player = FactoryGirl.create(:player, :parent => parent_with_player)
+    sign_in(parent_with_player)
     get :new, :parent_id => parent_with_player.id
     response.status.should be(200)
   end
