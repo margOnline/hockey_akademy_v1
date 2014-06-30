@@ -11,7 +11,7 @@ class CampRegistrationsController < ApplicationController
   end
 
   def create
-    @cr = CampRegistration.new
+    cr = CampRegistration.new
     if cr.valid?
       crc = CampRegistrationCollection.new(camp_registration_params, @parent.id)
       if crc.save!
@@ -19,7 +19,6 @@ class CampRegistrationsController < ApplicationController
         redirect_to parent_camp_registrations_path
       end
     else
-      @camp_registration = CampRegistration.new
       render 'new'
     end
   end
