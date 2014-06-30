@@ -23,7 +23,7 @@ describe CampRegistration do
 
       context 'without a player id' do
         @params = Hash[:player_id, '', :cs_ids, [1]]
-        subject { @crc = CampRegistrationCollection.new('',1)}
+        subject { @crc = CampRegistrationCollection.new(@params,1)}
         it { should_not be_valid }
       end
 
