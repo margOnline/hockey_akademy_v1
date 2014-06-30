@@ -2,7 +2,7 @@ class CampRegistrationCollection
   include ActiveModel::Validations
 
   validates :params, :presence => true
-  validates_numericality_of :parent_id, :only_integer => true
+  validates :parent_id, :numericality => {:only_integer => true}
 
   attr_accessor :cs_ids, :player_id, :parent_id, :params
 
