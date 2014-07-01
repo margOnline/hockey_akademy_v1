@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe CampRegistration do
   before do
-    @params = Hash[:player_id, 1, :cs_ids, [1]]
+    @params = {:player_id => 1, :cs_ids => [1]}
     @crc = CampRegistrationCollection.new(@params,1)
   end
 
@@ -38,13 +38,13 @@ describe CampRegistration do
 
     it 'should create one new CampRegistration for one camp_session_id' do
       crc = CampRegistrationCollection.new(@params,1)
-      expect(crc.save!).to change(CampRegistration.count).by(1)
+      expect { crc.save! }.to change { CampRegistration.count }.by(1)
     end
 
     it 'should create 3 new CampRegistration for 3 camp_session_ids' do
       @params = Hash[:player_id, 1, :cs_ids, [1,2,3]]
       crc = CampRegistrationCollection.new(@params,1)
-      expect(crc.save!).to change(CampRegistration.count).by(3)
+      expect { crc.save! }.to change { CampRegistration.count }.by(3)
     end
   end
 
