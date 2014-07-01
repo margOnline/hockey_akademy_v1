@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :parents do
     resources :players
     resources :camp_registrations
+    resources :baskets
   end
 
   resources :camps do
@@ -19,6 +20,10 @@ Rails.application.routes.draw do
   resources :players, :only => [:show] do
     resources :camp_sessions, :through => :camps
     resources :registrations
+  end
+
+  resource :basket, :only => [:show,:update] do
+    resources :camp_registrations
   end
 
 end
