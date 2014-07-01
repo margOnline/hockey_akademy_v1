@@ -11,10 +11,14 @@ class CampRegistrationsController < ApplicationController
   end
 
   def create
-    @crc = CampRegistrationCollection.new(camp_registration_params, @parent.id)
-    if @crc.save
-      flash[:success] = "Player registered"
-      redirect_to parent_camp_registrations_path
+    @crc = CampRegistrationCollection.new(@parent.id, camp_registration_params)
+    if @crc.valid?
+      if @crc.save
+        redirect_to parent_camp_registrations_path
+      else
+        @camp_registration = CampRegistration.new(camp_registration_params)
+        render 'new'
+      end
     else
       @camp_registration = CampRegistration.new(camp_registration_params)
       render 'new'
