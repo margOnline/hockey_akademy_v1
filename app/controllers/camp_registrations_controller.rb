@@ -3,7 +3,7 @@ class CampRegistrationsController < ApplicationController
   before_action :set_associations, :only => [:new, :create]
 
   def index
-    @camp_registrations = CampRegistration.where(:parent_id => current_parent.id)
+    @camp_registrations = current_parent.camp_registrations
   end
 
   def new
@@ -12,7 +12,7 @@ class CampRegistrationsController < ApplicationController
 
   def create
     @crc = CampRegistrationCollection.new(camp_registration_params, @parent.id)
-    if @crc.save!
+    if @crc.save
       flash[:success] = "Player registered"
       redirect_to parent_camp_registrations_path
     else
