@@ -6,4 +6,8 @@ module CampRegistrationsHelper
     number_to_currency(total, :unit => "£")
   end
 
+  def format_for(time)
+    time.strftime("%A, %d %b %Y %l:%M %p")
+  end
+
 end
