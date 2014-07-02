@@ -20,14 +20,14 @@ describe CampRegistration do
       end
 
       context 'without a player id' do
-        @params = {:player_id => '', :camp_session_id => [1]}
-        subject { @crc = CampRegistrationCollection.new(1, @params)}
+        params = {:player_id => '', :camp_session_id => [1]}
+        subject { @crc = CampRegistrationCollection.new(1, params)}
         it { should_not be_valid }
       end
 
       context 'without camp_session_ids' do
-        @params = {:player_id => 1, :camp_session_id => []}
-        subject { @crc = CampRegistrationCollection.new(1, @params)}
+        params = {:player_id => 1, :camp_session_id => []}
+        subject { @crc = CampRegistrationCollection.new(1, params)}
         it { should_not be_valid }
       end
     end
