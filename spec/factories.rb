@@ -42,6 +42,10 @@ FactoryGirl.define do
     f.end_time     Time.new(2014,7,11,16,0,0)
   end
 
+  factory :charge do |f|
+    f.association :parent
+  end
+
   factory :coach do |f|
     f.first_name 'Alex'
     f.last_name  'Ferguson'

@@ -1,7 +1,7 @@
 <%= redirect_to root_path unless current_parent %>
 <% provide(:title, 'Camp Registrations') %>
-<%= render 'shared/register_camp_link'  %>
-<%= render 'shared/payment_link'  %>
+<%= render 'shared/register_camp_link' if current_parent %>
+<%= render 'shared/payment_link' if current_parent %>
 <p>Your Registrations</p>
 <table>
   <% @players.each do |player| %>

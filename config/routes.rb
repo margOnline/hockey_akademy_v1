@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :players
     resources :camp_registrations
     resources :baskets
+    resources :charges
   end
 
   resources :camps do
@@ -26,5 +27,4 @@ Rails.application.routes.draw do
     resources :camp_registrations
   end
 
-  resource :charges
 end
