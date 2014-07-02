@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   # match '/signup', to: 'parents#new', via: 'get'
   match '/coach_profiles', to: 'static_pages#coach_profiles', via: 'get'
+  match '/pay', to: 'static_pages#pay', via: 'get'
 
 ### Parents ###
   devise_for :parents
