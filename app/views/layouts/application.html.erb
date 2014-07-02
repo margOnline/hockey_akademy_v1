@@ -11,7 +11,6 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="container">
-      <%= render 'shared/register_camp_link' if current_parent %>
       <% flash.each do |k,v| %>
         <div class="alert alert-<%= k %>"><%= v %></div>
       <% end %>
