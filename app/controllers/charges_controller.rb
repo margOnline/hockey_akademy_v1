@@ -1,10 +1,15 @@
 class ChargesController < ApplicationController
 
+  def new
+
+  end
+
   def create
-    @amount = 6000
+    customer_email = current_parent.email
+    @amount =  6000
 
     customer = Stripe::Customer.create(
-      :email => 'example@stripe.com',
+      :email => customer_email,
       :card => params[:stripeToken]
     )
 
@@ -18,5 +23,11 @@ class ChargesController < ApplicationController
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to parent_charge_path(current_parent)
+  end
+
+  private
+
+    def charge_params
+    params.require(:charge).permit(:parent_id)
   end
 end
