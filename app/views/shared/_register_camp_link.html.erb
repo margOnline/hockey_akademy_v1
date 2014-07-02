@@ -1,3 +1,7 @@
 <div class="cta">
-  <%= link_to "Register", new_parent_camp_registration_path(current_parent.id), :class => 'btn btn-primary' %>
+  <% if current_parent %>
+    <%= link_to "Register", new_parent_camp_registration_path(current_parent.id), :class => 'btn btn-primary' %>
+  <% else %>
+    <%= link_to "You must have an account to register for a camp", new_parent_registration_path, :class => 'btn btn-primary' %>
+  <% end %>
 </div>

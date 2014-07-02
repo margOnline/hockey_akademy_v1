@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :parents do
     resources :players
     resources :camp_registrations
+    resources :charges
   end
 
   resources :camps do

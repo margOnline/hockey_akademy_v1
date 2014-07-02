@@ -5,10 +5,23 @@ describe Basket do
     @basket = FactoryGirl.create(:basket)
   end
 
-  subject { @basket }
+  context 'validations' do
+    subject { @basket }
 
-  it { should belong_to(:parent) }
-  it { should have_many(:basket_items) }
-  it { should respond_to(:parent) }
-  it { should be_valid }
+    it { should belong_to(:parent) }
+    it { should have_many(:camp_registrations) }
+    it { should respond_to(:parent) }
+    it { should be_valid }
+
+    it 'has a price that is not negative' do
+      price = 0
+      expect(price).not_to be < 0
+    end
+  end
+
+  context 'price' do
+    it 'should equal the sum of all the camp_registrations' do
+
+    end
+  end
 end
