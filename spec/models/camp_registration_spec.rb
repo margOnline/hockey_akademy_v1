@@ -8,6 +8,5 @@ describe CampRegistration do
 
   it { should belong_to(:player) }
   it { should belong_to(:camp_session)}
-  it { should belong_to(:basket)}
   it { should be_valid }
 end
