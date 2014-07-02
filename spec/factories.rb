@@ -41,7 +41,8 @@ FactoryGirl.define do
   end
 
   factory :camp_registration_collection do |f|
-    f.params    Hash[:parent_id, 1, :cs_ids, 1]
+    params = { :parent_id => 1, :camp_session_ids => 1 }
+    f.params    params
     f.parent_id 1
   end
 
