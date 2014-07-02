@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe CampRegistration do
   before do
-    @params = {:player_id => 1, :camp_session_ids => [1]}
+    @params = {:player_id => 1, :camp_session_id => [1]}
   end
 
   context 'validations' do
@@ -20,13 +20,13 @@ describe CampRegistration do
       end
 
       context 'without a player id' do
-        @params = {:player_id => '', :camp_session_ids => [1]}
+        @params = {:player_id => '', :camp_session_id => [1]}
         subject { @crc = CampRegistrationCollection.new(1, @params)}
         it { should_not be_valid }
       end
 
       context 'without camp_session_ids' do
-        @params = {:player_id => 1, :camp_session_ids => []}
+        @params = {:player_id => 1, :camp_session_id => []}
         subject { @crc = CampRegistrationCollection.new(1, @params)}
         it { should_not be_valid }
       end
@@ -41,7 +41,7 @@ describe CampRegistration do
     end
 
     it 'should create 3 new CampRegistration for 3 camp_session_ids' do
-      @params = {:player_id => 1, :camp_session_ids => [1,2,3]}
+      @params = {:player_id => 1, :camp_session_id => [1,2,3]}
       crc = CampRegistrationCollection.new(1, @params)
       expect { crc.save }.to change { CampRegistration.count }.by(3)
     end

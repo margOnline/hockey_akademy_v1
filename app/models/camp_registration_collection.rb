@@ -8,8 +8,9 @@ class CampRegistrationCollection
 
   def initialize(parent_id,params={})
     @parent_id = parent_id
-    @cs_ids = params[:camp_session_ids]
+    @cs_ids = params[:camp_session_id]
     @player_id = params[:player_id]
+    @params = params
   end
 
   def save
