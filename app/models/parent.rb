@@ -23,4 +23,8 @@ class Parent < ActiveRecord::Base
     end
   end
 
+  def camp_registrations_total_price
+    camp_registrations.inject(0) {|sum, cr| sum + cr.camp_session.price }
+  end
+
 end
