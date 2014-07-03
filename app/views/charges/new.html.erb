@@ -1,4 +1,7 @@
 <%= form_tag parent_charges_path(current_parent) do %>
+  <section>
+    <%= render 'shared/details' %>
+  </section>
   <article>
     <label class="amount">
       <span>Amount: <%= number_to_currency(@amount, {:unit => '£'}) %></span>

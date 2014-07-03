@@ -12,4 +12,8 @@ module ApplicationHelper
   def full_name(first, last)
     "#{first.titleize} #{last.titleize}"
   end
+
+  def format(time)
+    time.strftime('%A, %d %b %Y')
+  end
 end
