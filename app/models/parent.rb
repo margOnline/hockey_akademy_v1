@@ -5,6 +5,8 @@ class Parent < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :players
+  has_many :camp_registrations
+  has_many :charges
 
   validates :first_name, :presence => true
   validates :last_name, :presence => true

@@ -8,6 +8,8 @@ describe Parent do
   subject { @parent }
 
   it { should have_many(:players) }
+  it { should have_many(:camp_registrations)}
+  it { should have_many(:charges)}
   it { should respond_to(:first_name) }
   it { should respond_to(:last_name) }
   it { should respond_to(:email) }
