@@ -18,19 +18,17 @@ FactoryGirl.define do
   ### ALPHABETIZE THIS LIST ###
   #############################
 
-  factory :basket do |f|
-    f.association :parent
-  end
-
-  factory :basket_item do |f|
-    f.association :basket
-  end
-
   factory :camp do |f|
     f.association :location
     f.name        'Goalkeeping'
     f.description 'ipsem lorem'
     f.num_of_attendees 30
+  end
+
+  factory :camp_registration do |f|
+    f.association :player
+    f.association :camp_session
+    f.association :parent
   end
 
   factory :camp_session do |f|
@@ -63,11 +61,6 @@ FactoryGirl.define do
     f.last_name             "Doe"
     f.gender                "male"
     f.dob                   Time.current - 12.years
-  end
-
-  factory :camp_registration do |f|
-    f.association :player
-    f.association :camp_session
   end
 
   factory :standard do |f|
