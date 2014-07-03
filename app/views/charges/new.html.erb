@@ -1,12 +1,14 @@
 <%= form_tag parent_charges_path(current_parent) do %>
   <article>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <span>Amount: <%= number_to_currency(@amount, {:unit => '£'}) %></span>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
-          data-amount="500"></script>
+          data-amount= <%= "#{@amount * 100}" %>
+          data-currency="GBP">
+          </script>
 <% end %>

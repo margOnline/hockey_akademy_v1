@@ -1,13 +1,13 @@
 class ChargesController < ApplicationController
 
   def new
-
+    @crs = CampRegistration.for_parent(current_parent)
+    @amount =  current_parent.camp_registrations_total_price
   end
 
   def create
     customer_email = current_parent.email
-    @amount =  6000
-
+    @amount =  current_parent.camp_registrations_total_price
     customer = Stripe::Customer.create(
       :email => customer_email,
       :card => params[:stripeToken]
