@@ -8,8 +8,4 @@ class CampRegistration < ActiveRecord::Base
 
   scope :for_parent, ->(parent) { where(:parent => parent) }
 
-  def total_price
-
-  end
-
 end

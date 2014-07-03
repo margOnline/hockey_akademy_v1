@@ -7,7 +7,4 @@ module CampsHelper
     format(camp.camp_sessions.max_by{|cs| cs.end_time}.end_time)
   end
 
-  def format(time)
-    time.strftime('%A, %d %b %Y')
-  end
 end
