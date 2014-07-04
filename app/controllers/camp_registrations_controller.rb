@@ -11,16 +11,11 @@ class CampRegistrationsController < ApplicationController
   end
 
   def create
-    @crc = CampRegistrationCollection.new(@parent.id, camp_registration_params)
-    if @crc.valid?
-      if @crc.save
-        redirect_to parent_camp_registrations_path
-      else
-        @camp_registration = CampRegistration.new(camp_registration_params)
-        render 'new'
-      end
+    @crc = CampRegistrationCollection.new(@parent, camp_registration_params)
+    if @crc.save
+      redirect_to parent_camp_registrations_path
     else
-      @camp_registration = CampRegistration.new(camp_registration_params)
+      @camp_registration = @crc.camp_registration
       render 'new'
     end
   end
@@ -53,6 +48,10 @@ class CampRegistrationsController < ApplicationController
     params['camp_registration'].each do |k,v|
       v.reject!(&:blank?) if v.is_a?(Array)
     end
+  end
+
+  def setup_camp_sessions
+    @selected_camp_sessions = params[:camp_session_id] || []
   end
 
 end
