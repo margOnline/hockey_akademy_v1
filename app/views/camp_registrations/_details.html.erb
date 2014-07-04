@@ -1,17 +1,5 @@
-<<<<<<< HEAD
 <ul>
 <% @crs.each do |cr| %>
   <li><%= "#{cr.player.full_name} is attending #{cr.camp_session.title} on #{format(cr.camp_session.start_time)}" %></li>
 <% end %>
 </ul>
-=======
-<% @camp_registrations.each do |cr| %>
-  <tr>
-    <th><%= cr.camp_session.title %></th>
-    <th><%= format_for(cr.camp_session.start_time) %></th>
-    <th><%= format_for(cr.camp_session.end_time) %></th>
-    <th><%= cr.camp_session.price %></th>
-    <th><%= button_to 'Delete', parent_camp_registration_path(current_parent, cr), :confirm => "Are you sure?", :method => :delete, :id => cr.id %></th>
-  </tr>
-<% end %>
->>>>>>> master
