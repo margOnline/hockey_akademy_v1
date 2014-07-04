@@ -16,10 +16,10 @@ describe CampsHelper do
   end
 
   it 'returns the earliest start date of all a camp\'s camp_sessions' do
-    expect(start_date_for(@camp)).to eq format(@cs2.start_time)
+    expect(start_date_for(@camp)).to eq @cs2.start_time.strftime('%A, %d %b %Y')
   end
 
-  it 'returns the earliest start date of all a camp\'s camp_sessions' do
-    expect(end_date_for(@camp)).to eq format(@cs1.end_time)
+  it 'returns the latest start date of all a camp\'s camp_sessions' do
+    expect(end_date_for(@camp)).to eq @cs1.end_time.strftime('%A, %d %b %Y')
   end
 end

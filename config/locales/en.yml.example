@@ -1,0 +1,7 @@
+development:
+  STRIPE_PUBLISHABLE_KEY: input_api_key_here
+  STRIPE_SECRET_KEY: input_secret_key_here
+
+test:
+  STRIPE_PUBLISHABLE_KEY: input_key_here
+  STRIPE_SECRET_KEY: input_secret_key_here

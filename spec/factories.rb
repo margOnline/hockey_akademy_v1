@@ -31,6 +31,12 @@ FactoryGirl.define do
     f.association :parent
   end
 
+  factory :camp_registration_collection do |f|
+    params = { :parent_id => 1, :camp_session_ids => 1 }
+    f.params    params
+    f.parent_id 1
+  end
+
   factory :camp_session do |f|
     f.association :camp
     f.title       'Penalties'

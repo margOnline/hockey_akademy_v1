@@ -1,0 +1,25 @@
+development:
+ adapter: postgresql
+ encoding: unicode
+ database: hockey_akademy_development
+ pool: 5
+ username:
+ password:
+ host: localhost
+
+test:
+ adapter: postgresql
+ encoding: unicode
+ database: hockey_akademy_test
+ pool: 5
+ username:
+ password:
+ host: localhost
+
+production:
+ adapter: postgresql
+ encoding: unicode
+ database: hockey_adademy_production
+ pool: 5
+ username:
+ password:
