@@ -4,6 +4,7 @@ class CampRegistrationsController < ApplicationController
 
   def index
     @camp_registrations = current_parent.camp_registrations
+    @players = current_parent.players
   end
 
   def new
