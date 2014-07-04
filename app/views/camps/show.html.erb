@@ -1,9 +1,10 @@
 <div>
+  <%= render 'shared/register_camp_link'  %>
   <h2><%= @camp.name %></h2>
   <p><%= @camp.description %></p>
   <p>Places available: <%= @camp.num_of_attendees %></p>
   <h3>Sessions</h3>
-<table>
+  <table>
     <tr>
       <th>Title</th>
       <th>Description</th>

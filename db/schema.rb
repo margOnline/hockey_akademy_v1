@@ -11,26 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140628160640) do
+=======
+ActiveRecord::Schema.define(version: 20140702223304) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "basket_items", force: true do |t|
-    t.integer  "basket_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "basket_items", ["basket_id"], name: "index_basket_items_on_basket_id", using: :btree
-
-  create_table "baskets", force: true do |t|
-    t.integer  "parent_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "baskets", ["parent_id"], name: "index_baskets_on_parent_id", using: :btree
 
   create_table "camp_registrations", force: true do |t|
     t.integer  "camp_session_id"
@@ -63,6 +51,14 @@ ActiveRecord::Schema.define(version: 20140628160640) do
     t.integer  "location_id"
     t.integer  "num_of_attendees"
   end
+
+  create_table "charges", force: true do |t|
+    t.integer  "parent_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "charges", ["parent_id"], name: "index_charges_on_parent_id", using: :btree
 
   create_table "coaches", force: true do |t|
     t.string   "first_name"
