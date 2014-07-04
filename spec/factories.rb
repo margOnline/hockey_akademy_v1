@@ -33,6 +33,19 @@ FactoryGirl.define do
     f.num_of_attendees 30
   end
 
+
+  factory :camp_registration do |f|
+    f.association :player
+    f.association :camp_session
+    f.association :parent
+  end
+
+  factory :camp_registration_collection do |f|
+    params = { :parent_id => 1, :camp_session_ids => 1 }
+    f.params    params
+    f.parent_id 1
+  end
+
   factory :camp_session do |f|
     f.association :camp
     f.title       'Penalties'
@@ -63,11 +76,6 @@ FactoryGirl.define do
     f.last_name             "Doe"
     f.gender                "male"
     f.dob                   Time.current - 12.years
-  end
-
-  factory :camp_registration do |f|
-    f.association :player
-    f.association :camp_session
   end
 
   factory :standard do |f|
