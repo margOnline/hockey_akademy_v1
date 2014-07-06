@@ -15,8 +15,8 @@
       <tr>
         <td><%= session.title %></td>
         <td><%= session.description %></td>
-        <td><%= session.start_time.strftime("%A, %d %b %Y %l:%M %p") %></td>
-        <td><%= session.end_time.strftime("%A, %d %b %Y %l:%M %p") %></td>
+        <td><%= format_time(session.start_time) %></td>
+        <td><%= format_time(session.end_time) %></td>
       </tr>
     <% end %>
   </table>
