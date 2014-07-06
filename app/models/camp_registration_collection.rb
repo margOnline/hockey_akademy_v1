@@ -18,11 +18,12 @@ class CampRegistrationCollection
 
   def save
     @camp_registration = @parent.camp_registrations.build(
-      :player_id => @parent_id,
+      :player_id => @player_id,
       :camp_session_id => @camp_session_ids.first,
       :parent_id => @parent_id
     )
-    @camp_registration.camp_session_id = @camp_session_ids.first
+    # @camp_registration.camp_session_id = @camp_session_ids.first
+    # @camp_registration.player_id = @player_id
     if valid? && @camp_registration.valid?
       save_camp_registrations!
     else
@@ -32,9 +33,9 @@ class CampRegistrationCollection
 
   private
 
-  def save_camp_registrations
+  def save_camp_registrations!
     camp_registrations = @camp_session_ids.inject([]) do |camp_registration, camp_session_id|
-      camp_registration = @crc.camp_registration.build(@params)
+      camp_registration = @camp_registration
       camp_registration.camp_session_id = camp_session_id
       camp_registration.save!
     end
