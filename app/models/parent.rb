@@ -6,6 +6,7 @@ class Parent < ActiveRecord::Base
 
   has_many :players
   has_many :camp_registrations
+  has_many :charges
 
   validates :first_name, :presence => true
   validates :last_name, :presence => true
@@ -20,6 +21,10 @@ class Parent < ActiveRecord::Base
     if mobile_number.blank? && home_phone_number.blank?
       errors.add(:mobile_phone_number, 'or Home phone number must be supplied')
     end
+  end
+
+  def camp_registrations_total_price
+    camp_registrations.inject(0) {|sum, cr| sum + cr.camp_session.price }
   end
 
 end

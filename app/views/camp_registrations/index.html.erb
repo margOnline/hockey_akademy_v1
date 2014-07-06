@@ -3,33 +3,32 @@
 <%= render 'shared/register_camp_link' if current_parent %>
 <%= render 'shared/payment_link' if current_parent %>
 <p>Your Registrations</p>
-<table>
-  <% @players.each do |player| %>
-    <% if player.camp_sessions.any? %>
+  <% if @camp_registrations.empty? %>
+  <p>You have no registrations.</p>
+<% else %>
+  <table>
+    <tr>
+      <th>Player</th>
+      <th>Session</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Price</th>
+    </tr>
+    <% @camp_registrations.each do |cr| %>
       <tr>
-        <th>Player: <%= player.full_name %></th>
+        <th><%= cr.player.full_name %></th>
+        <th><%= cr.camp_session.title %></th>
+        <th><%= cr.camp_session.start_time.strftime("%A, %d %b %Y %l:%M %p") %></th>
+        <th><%= cr.camp_session.end_time.strftime("%A, %d %b %Y %l:%M %p") %></th>
+        <th><%= cr.camp_session.price %></th>
+        <th><%= button_to 'Delete', parent_camp_registration_path(current_parent, cr), :confirm => "Are you sure?", :method => :delete, :id => cr.id %></th>
       </tr>
-      <tr>
-        <th></th>
-        <th>Camp</th>
-        <th>Session</th>
-        <th>Start Time</th>
-        <th>End Time</th>
-      </tr>
-      <% player.camp_sessions.each do |cs| %>
-        <tr>
-          <th></th>
-          <th><%= cs.camp.name %></th>
-          <th><%= cs.title %></th>
-          <th><%= cs.start_time.strftime("%A, %d %b %Y %l:%M %p") %></th>
-          <th><%= cs.end_time.strftime("%A, %d %b %Y %l:%M %p") %></th>
-          <th><%= link_to 'Delete', :method => :delete, :id => cs.id %></th>
-        </tr>
-      <% end %>
     <% end %>
-  <% end %>
-  <tr>
-    <th></th><th></th><th></th><th></th><th></th>
-    <th><%= link_to 'Pay', "#" %></th>
-  </tr>
-</table>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Total</th>
+      <th><%= total(@camp_registrations) %><th>
+    </tr>
+  </table>
+<% end %>

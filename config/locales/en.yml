@@ -1,0 +1,52 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  activerecord:
+    attributes:
+      user:
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        remember_me: "Remember me"
+  confirmations:
+    new:
+      title: "Resend confirmation instructions"
+      submit_button: "Resend confirmation instructions"
+  passwords:
+    new:
+      title: "Forgot your password?"
+      submit_button: "Send me password reset instructions"
+    edit:
+      title: "Change your password"
+      password_reset_guidance: "Please enter your new password below."
+      submit_button: "Change my password"
+  registrations:
+    new:
+      title: "Sign up"
+      guidance: "All we need is your email address. We’ll do the rest."
+      submit_button: "Sign up"
+    edit:
+      title: "Your account"
+      pw_guidance: "(Leave blank if you don’t want to change it)"
+      current_pw_guidance: "(We need your current password to confirm your changes)"
+      submit_button: "Update"
+      cancel_title: "Cancel my account"
+      cancel_guidance: "Unhappy?"
+      cancel_link_text: "Cancel my account"
+      cancel_confirmation: "Are you sure?"
+  sessions:
+    new:
+      title: "Sign in"
+      submit_button: "Sign in"
+  shared:
+    links:
+      sign_in: "Sign in"
+      sign_up: "Sign up"
+      forgot_password: "Forgot your password?"
+      did_not_receive_confirmation: "Didn’t receive confirmation instructions?"
+      did_not_receive_unlock: "Didn’t receive unlock instructions?"
+  unlocks:
+    new:
+      title: "Resend unlock instructions"
+      submit_button: "Resend unlock instructions"
