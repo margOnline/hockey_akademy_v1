@@ -6,7 +6,8 @@
 
 # Ignore bundler config.
 /.bundle
-config/locales/en.yml
+
+config/env.yml
 config/database.yml
 config/secrets.yml
 
