@@ -5,7 +5,7 @@
   %>
 <div id="wrapper">
   <h2>Next Camp: <%= @camp.name %></h2>
-  <p>Starts <%= start_date_for(@camp) %>
+  <p>Starts <%= format_date(@camp.start_time) %>
   <%= link_to 'Details', camp_path(@camp) %></p>
 
   <div class="slider-wrapper theme-default">

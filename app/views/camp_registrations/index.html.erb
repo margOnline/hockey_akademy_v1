@@ -3,7 +3,7 @@
 <%= render 'shared/register_camp_link' if current_parent %>
 <%= render 'shared/payment_link' if current_parent %>
 <p>Your Registrations</p>
-  <% if @camp_registrations.empty? %>
+  <% if @camp_registrations.none? %>
   <p>You have no registrations.</p>
 <% else %>
   <table>
