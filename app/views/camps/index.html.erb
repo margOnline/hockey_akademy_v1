@@ -13,8 +13,8 @@
       <tr>
         <td><%= camp.name %></td>
         <td><%= camp.location.name %></td>
-        <td><%= start_date_for(camp) if camp.camp_sessions.any? %></td>
-        <td><%= end_date_for(camp) if camp.camp_sessions.any? %></td>
+        <td><%= format_time(camp.start_time) if camp.camp_sessions.any? %></td>
+        <td><%= format_time(camp.end_time) if camp.camp_sessions.any? %></td>
         <td><%= link_to 'Full details', camp_path(camp) %></td>
       </tr>
     <% end %>

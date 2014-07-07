@@ -25,9 +25,4 @@ class ChargesController < ApplicationController
     redirect_to parent_charge_path(current_parent)
   end
 
-  private
-
-    def charge_params
-    params.require(:charge).permit(:parent_id)
-  end
 end

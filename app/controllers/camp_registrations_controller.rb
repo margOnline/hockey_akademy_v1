@@ -27,7 +27,7 @@ class CampRegistrationsController < ApplicationController
   end
 
   def destroy
-    CampRegistration.find(params[:id]).destroy
+    current_parent.camp_registrations.find(params[:id]).destroy
     redirect_to parent_camp_registrations_path
   end
 
