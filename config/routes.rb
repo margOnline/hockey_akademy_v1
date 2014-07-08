@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   root 'static_pages#home'
   # match '/signup', to: 'parents#new', via: 'get'
   match '/coach_profiles', to: 'static_pages#coach_profiles', via: 'get'

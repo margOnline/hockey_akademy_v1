@@ -1,8 +1,14 @@
-#############################
-###       PARENTS         ###
-#############################
+#############################################
+###       USERS - Parents and Admins      ###
+#############################################
 FactoryGirl.define do
   sequence(:email) { |n| "test#{n}@gmail.com" }
+
+  factory :admin do |f|
+    email                 { FactoryGirl.generate(:email) }
+    password              "password"
+    password_confirmation "password"
+  end
 
   factory :parent do |f|
     first_name            "John"

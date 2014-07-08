@@ -10,6 +10,7 @@ class Parent < ActiveRecord::Base
 
   validates :first_name, :presence => true
   validates :last_name, :presence => true
+  validates :email, :presence => true
   validates :password, :presence => true
   validate :presence_of_phone_number
 
