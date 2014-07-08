@@ -3,32 +3,18 @@
 <%= render 'shared/register_camp_link' if current_parent %>
 <%= render 'shared/payment_link' if current_parent %>
 <p>Your Registrations</p>
-  <% if @camp_registrations.none? %>
+  <% if @parent.camp_registrations.none? %>
   <p>You have no registrations.</p>
 <% else %>
-  <table>
-    <tr>
-      <th>Player</th>
-      <th>Session</th>
-      <th>Start Time</th>
-      <th>End Time</th>
-      <th>Price</th>
-    </tr>
-    <% @camp_registrations.each do |cr| %>
-      <tr>
-        <th><%= cr.player.full_name %></th>
-        <th><%= cr.camp_session.title %></th>
-        <th><%= format_time(cr.camp_session.start_time) %></th>
-        <th><%= format_time(cr.camp_session.end_time) %></th>
-        <th><%= cr.camp_session.price %></th>
-        <th><%= button_to 'Delete', parent_camp_registration_path(current_parent, cr), :confirm => "Are you sure?", :method => :delete, :id => cr.id %></th>
-      </tr>
-    <% end %>
-    <tr>
-      <th></th>
-      <th></th>
-      <th>Total</th>
-      <th><%= total(@camp_registrations) %><th>
-    </tr>
-  </table>
+  <% @camp_registrations.each do |cr| %>
+    <h3><%= cr.player.name %></h3>
+    <ul>
+      <% cr.group_by { |r| r.camp_session.camp }.map do |camp, registrations| %>
+        <li>
+          <%= camp.name %> - <%= registrations.map(&:id).join(', ') %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
 <% end %>

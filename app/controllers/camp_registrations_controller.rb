@@ -3,8 +3,11 @@ class CampRegistrationsController < ApplicationController
   before_action :set_associations, :only => [:new, :create]
 
   def index
-    @camp_registrations = current_parent.camp_registrations
-    @players = current_parent.players
+    @parent = Parent.includes(:camp_registrations =>
+      [:player, { :camp_session => :camp } ]).find(current_parent.id)
+    @camp_registrations = @parent.camp_registrations.group_by(:player, :registration)
+    # @camp_registrations = current_parent.camp_registrations
+    # @players = current_parent.players
   end
 
   def new
